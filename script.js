@@ -39,8 +39,7 @@
 
   saveMove = (e) => moves[e.id] = player;
 
-  isWinner = () =>
-    return (winningCombos.map(checkCombo).filter(result => result).length > 0);
+  isWinner = () => (winningCombos.map(checkCombo).filter(result => result).length > 0);
 
   checkCombo = combo => (combo.filter(square => moves[square] === player).length === 3);
 
