@@ -1,0 +1,14 @@
+header {
+  background-color: lightgrey;
+  min-height: 4em;
+}
+
+td {
+  
+   border: 2px solid black;
+   font-size: 5em;
+   width: 2em;
+   height: 2em;
+   text-align: center;
+   vertical-align: middle;
+}
