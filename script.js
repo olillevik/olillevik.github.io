@@ -30,9 +30,9 @@
 
     var drawMark = m => m.innerHTML = player;
 
-    var saveMove = m => moves[m.id] = player;
-
     var changePlayer = () => (player === "O") ? player = "X" : player = "O";
+
+    var saveMove = m => moves[m.id] = player;
 
     var isWinner = () => (winningCombos.map(isWinningCombo).filter(result => result).length > 0);
 
