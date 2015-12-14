@@ -32,13 +32,7 @@
 
     var saveMove = m => moves[m.id] = player;
 
-    var changePlayer = () => {
-        if (player === "O") {
-            player = "X";
-        } else {
-            player = "O";
-        }
-    };
+    var changePlayer = () => (player === "O") ? player = "X" : player = "O";
 
     var isWinner = () => (winningCombos.map(isWinningCombo).filter(result => result).length > 0);
 
