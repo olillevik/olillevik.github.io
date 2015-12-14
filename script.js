@@ -1,46 +1,48 @@
 (() => {
+    'use strict';
 
-  var player = "O";
-  var moves = [];
-  var winningCombos = [
+    var player = "O",
+        moves = [],
+        winningCombos = [
     ["1", "2", "3"],
     ["4", "5", "6"],
     ["7", "8", "9"],
-    ["1", "5", "8"],
+    ["1", "5", "9"],
+    ["3", "5", "7"],
     ["1", "4", "7"],
     ["2", "5", "8"],
     ["3", "6", "9"]
   ];
 
-  play = (square) => {
-    if (square.innerHTML !== "O" && square.innerHTML !== "X") {
-      mark(square);
-      saveMove(square);
-      if (isWinner()) {
-        alert("Wohoo! " + player + " vant!");
-        // more fun...
-        // count score
-        // reset game
-      };
-      // if (isDraw()){}
-      changePlayer();
-    }
-  }
+    window.play = (sq) => {
+        if (sq.innerHTML !== "O" && sq.innerHTML !== "X") {
+            drawMark(sq);
+            saveMove(sq);
+            if (isWinner()) {
+                alert("Wohoo! " + player + " vant!");
+                // more fun...
+                // count score
+                // reset game
+            };
+            // if (isDraw()){}
+            changePlayer();
+        }
+    };
 
-  mark = m => m.innerHTML = player;
+    var drawMark = m => m.innerHTML = player;
 
-  changePlayer = () => {
-    if (player === "O") {
-      player = "X";
-    } else {
-      player = "O";
-    }
-  }
+    var saveMove = (m) => moves[m.id] = player;
 
-  saveMove = (e) => moves[e.id] = player;
+    var changePlayer = () => {
+        if (player === "O") {
+            player = "X";
+        } else {
+            player = "O";
+        }
+    };
 
-  isWinner = () => (winningCombos.map(checkCombo).filter(result => result).length > 0);
+    var isWinner = () => (winningCombos.map(isWinningCombo).filter(result => result).length > 0);
 
-  checkCombo = combo => (combo.filter(square => moves[square] === player).length === 3);
+    var isWinningCombo = combo => (combo.filter(sq => moves[sq] === player).length === 3);
 
 })();
