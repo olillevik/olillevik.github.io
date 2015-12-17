@@ -1,7 +1,7 @@
 (() => {
     'use strict';
 
-    var player = "O";
+    var player = "0";
     var moves = [];
     var winningCombos = [
         ["1", "2", "3"],
@@ -14,7 +14,7 @@
         ["3", "6", "9"]];
 
     window.play = (sq) => {
-        if (sq.innerHTML !== "O" && sq.innerHTML !== "X") {
+        if (sq.innerHTML !== "0" && sq.innerHTML !== "X") {
             drawMark(sq);
             saveMove(sq);
             if (isWinner()) {
@@ -36,6 +36,6 @@
 
     var colourCombo = combo => combo.forEach(sq => document.getElementById(sq + "").style.backgroundColor = "green");
 
-    var changePlayer = () => (player === "O") ? player = "X" : player = "O";
+    var changePlayer = () => (player === "0") ? player = "X" : player = "0";
 
 })();
