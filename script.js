@@ -18,12 +18,8 @@
             drawMark(sq);
             saveMove(sq);
             if (isWinner()) {
-                alert("Wohoo! " + player + " vant!");
-                // more fun...
-                // count score
-                // reset game
+                colourWinner();
             };
-            // if (isDraw()){}
             changePlayer();
         }
     };
@@ -34,8 +30,12 @@
 
     var saveMove = m => moves[m.id] = player;
 
-    var isWinner = () => (winningCombos.map(isWinningCombo).filter(result => result).length > 0);
+    var isWinner = () => (winningCombos.filter(isWinningCombo).length > 0);
 
     var isWinningCombo = combo => (combo.filter(sq => moves[sq] === player).length === 3);
+
+    var colourWinner = () => winningCombos.filter(isWinningCombo).map(colourCombo);
+
+    var colourCombo = combo => combo.forEach(sq => document.getElementById(sq + "").style.backgroundColor = "green");
 
 })();

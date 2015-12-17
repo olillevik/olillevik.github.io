@@ -16,7 +16,10 @@ Tripp-trapp-tresko
 ### Objekter
 
 ## HTML/CSS/JavaScript
-Dett#e er ikke et HTML-kurs men litt trenger vi for å lage brettet.
+Dette er ikke et HTML-kurs men litt trenger vi for å lage brettet.
 
 ## Verktøy
-Intro til Atom. Webside på Github pages?
+### Bracket
+For å skrive kode i HTML, CSS ellerl JavaScript trenger vi ikke noe spesielt verktøy. Men verktøy kan gjøre det lettere for oss. Vi skal bruke [brackets.io]. Dette er en enkel editor som har støtte for autocomplete og syntax-highlighting. Vi skal også utvide den med tillegget beautify for å autoformatere koden vår.
+
+### Github
