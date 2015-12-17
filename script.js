@@ -32,9 +32,9 @@
 
     var isWinningCombo = combo => (combo.filter(sq => moves[sq] === player).length === 3);
 
-    var colourWinner = () => winningCombos.filter(isWinningCombo).map(colourCombo);
+    var colourWinner = () => winningCombos.filter(isWinningCombo).forEach(colourCombo);
 
-    var colourCombo = combo => combo.map(sq => document.getElementById(sq + "").style.backgroundColor = "green");
+    var colourCombo = combo => combo.forEach(sq => document.getElementById(sq + "").style.backgroundColor = "green");
 
     var changePlayer = () => (player === "O") ? player = "X" : player = "O";
 
