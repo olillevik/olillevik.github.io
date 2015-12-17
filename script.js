@@ -34,7 +34,7 @@
 
     var colourWinner = () => winningCombos.filter(isWinningCombo).map(colourCombo);
 
-    var colourCombo = combo => combo.forEach(sq => document.getElementById(sq + "").style.backgroundColor = "green");
+    var colourCombo = combo => combo.map(sq => document.getElementById(sq + "").style.backgroundColor = "green");
 
     var changePlayer = () => (player === "O") ? player = "X" : player = "O";
 
