@@ -24,11 +24,9 @@
         }
     };
 
-    var drawMark = m => m.innerHTML = player;
+    var drawMark = td => td.innerHTML = player;
 
-    var changePlayer = () => (player === "O") ? player = "X" : player = "O";
-
-    var saveMove = m => moves[m.id] = player;
+    var saveMove = td => moves[td.id] = player;
 
     var isWinner = () => (winningCombos.filter(isWinningCombo).length > 0);
 
@@ -37,5 +35,7 @@
     var colourWinner = () => winningCombos.filter(isWinningCombo).map(colourCombo);
 
     var colourCombo = combo => combo.forEach(sq => document.getElementById(sq + "").style.backgroundColor = "green");
+
+    var changePlayer = () => (player === "O") ? player = "X" : player = "O";
 
 })();
