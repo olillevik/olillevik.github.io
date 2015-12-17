@@ -1,7 +1,7 @@
 (() => {
     'use strict';
 
-    var nextPlayer = "0";
+    var player = "0";
     var moves = [];
     var winningCombos = [
         ["1", "2", "3"],
@@ -24,18 +24,18 @@
         }
     };
 
-    var drawMark = td => td.innerHTML = nextPlayer;
+    var drawMark = td => td.innerHTML = player;
 
-    var saveMove = td => moves[td.id] = nextPlayer;
+    var saveMove = td => moves[td.id] = player;
 
     var isWinner = () => (winningCombos.filter(isWinningCombo).length > 0);
 
-    var isWinningCombo = combo => (combo.filter(sq => moves[sq] === nextPlayer).length === 3);
+    var isWinningCombo = combo => (combo.filter(sq => moves[sq] === player).length === 3);
 
     var colourWinner = () => winningCombos.filter(isWinningCombo).forEach(colourCombo);
 
     var colourCombo = combo => combo.forEach(sq => document.getElementById(sq + "").style.backgroundColor = "green");
 
-    var changePlayer = () => (nextPlayer === "0") ? nextPlayer = "X" : nextPlayer = "0";
+    var changePlayer = () => (player === "0") ? player = "X" : player = "0";
 
 })();
