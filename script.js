@@ -28,13 +28,20 @@
 
     var saveMove = td => moves[td.id] = player;
 
-    var isWinner = () => (winningCombos.filter(isWinningCombo).length > 0);
+    var isWinner = () => (winningCombos
+        .filter(isWinningCombo)
+        .length > 0);
 
-    var isWinningCombo = combo => (combo.filter(sq => moves[sq] === player).length === 3);
+    var isWinningCombo = combo => (combo
+        .filter(sq => moves[sq] === player)
+        .length === 3);
 
-    var colourWinner = () => winningCombos.filter(isWinningCombo).forEach(colourCombo);
+    var colourWinner = () => (winningCombos
+        .filter(isWinningCombo)
+        .map(colourCombo));
 
-    var colourCombo = combo => combo.forEach(sq => document.getElementById(sq + "").style.backgroundColor = "green");
+    var colourCombo = combo => (combo
+        .map(sq => document.getElementById(sq + "").style.backgroundColor = "green"));
 
     var changePlayer = () => (player === "0") ? player = "X" : player = "0";
 
