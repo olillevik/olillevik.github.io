@@ -90,11 +90,11 @@ fly();
 ```
 
 ## La reisen begynne...
-Vi skal nå live-kode bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
+Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
 
 ### Opprett prosjektet på github
 
-### 
+### Lag en webside
 Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vil.
 
 ```html
@@ -108,3 +108,68 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
     </body>
 </html>
 ```
+
+### Gi siden en tittel
+
+```html
+<!DOCTYPE html>
+<html>
+    <head lang="no">
+        <meta charset="utf-8" />
+        <title>Bondesjakk</title>
+    </head>
+
+    <body>
+        <h1>Bondesjakk</h1>
+    </body>
+</html>
+```
+
+### Lag et rutenett
+
+```html
+<table>
+    <tr><td>Celle 1 - rad 1</td><td>Celle 2 - rad 1</td></tr>
+    <tr><td>Celle 1 - rad 2</td><td>Celle 2 - rad 2</td></tr>
+</table>
+```
+
+### Endre utseende
+Lag en fil kalt styles.css.
+
+```css
+header {
+    background-color: lightgrey;
+    min-height: 4em;
+}
+
+td {
+    border: 2px solid black;
+    font-size: 5em;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    background-color: lightgrey
+}
+```
+
+Importer css-filen i index.html.
+
+```html
+<link rel="stylesheet" href="styles.css">
+```
+
+### La oss krydre med litt JavaScript
+Vi starter med litt magi. Koden under sørger for at JavaScript-koden lastes inn når den importeres av en web-side.
+
+```javascript
+(() => {
+    'use strict';
+    //skriv koden din her
+})();
+```
+
+_lag play-metoden, kjør console.log ett eller annet_ og fyr ved trykk på en rute.
+    
+
