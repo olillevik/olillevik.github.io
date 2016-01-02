@@ -2,18 +2,35 @@
 ved _Ørjan Markhus Lillevik_
 
 ## Hvorfor JavaScript i kodeklubben?
-JavaScript er det programmeringsspråket som brukes for å gi funksjonalitet i web-sider. Internett er en av de viktigste oppfinnelsene til menneskeheten. Det har på mange områder tatt over for bøker som kilde til kunnskap. Siden JavaScript er sentralt i en så viktig oppfinnelse mener jeg JavaScript er verdens viktigste programmeringsspråk.
-
-Litt forenklet kan vi si at en webside er bygge opp av tre ting.
+JavaScript er det programmeringsspråket som brukes for å gi funksjonalitet i web-sider. Litt forenklet kan vi si at en webside er bygge opp av tre ting.
 
 1. HTML - gir struktur til websiden
 2. CSS - gir utseende til websiden
 3. JavaScript - gir funksjonalitet til websiden
 
-## Hva skal vi lage
-Tripp-trapp-tresko
+Internett er en av de viktigste oppfinnelsene til menneskeheten. Det er i dag det viktigste mediet for å formidle kunnskap til andre.
 
-_Beskriv reglene her_
+
+## Hva skal vi lage
+Vi skal lage spillet tripp-trapp-tresko også kalt bondesjakk. Vi skal lære oss å legge det ut på en webside slik at spillet er tilgjengelig for hvem som helst i hele verden.
+
+Reglene for tripp-trapp-tresko kan leses på wikipedia side [https://no.wikipedia.org/wiki/Tripp-trapp-tresko](https://no.wikipedia.org/wiki/Tripp-trapp-tresko).
+
+## Hva trenger vi
+
+1. Nettleseren Chrome eller Firefox.
+2. Teksteditoren [Brackets.io](http://brackets.io)
+3. En Github-konto [http://github.com](http://github.com)
+
+### Bracket
+For å skrive kode i HTML, CSS ellerl JavaScript trenger vi ikke noe spesielt verktøy. Men verktøy kan gjøre det lettere for oss. Vi skal bruke [brackets.io](http://brackets.io). Dette er en enkel editor som har støtte for autocomplete og syntax-highlighting. Vi skal også utvide den med tillegget beautify for å autoformatere koden vår.
+
+### Github
+* For å ta vare på koden vi skriver. 
+* For å kunne komme tilbake til "der vi var" hvis vi programmerer feil. 
+* For å få programmet vårt ut på internett.
+
+Lag en konto på [http://github.com](http://github.com). Installer desktop-klienten til github på pcen din [https://desktop.github.com/](https://desktop.github.com/).
 
 ## Programmering i JavaScript
 For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
@@ -59,18 +76,18 @@ Funksjoner har ingen, en eller flere inputvariable. Dersom du ikke ønsker å ha
 
 ```javascript
 var fly = () => "Ascendio";
+fly();
 ```
 
-## HTML/CSS/JavaScript
-Dette er ikke et HTML-kurs men litt trenger vi for å lage brettet. Vi skal lage en html-side med et rutenett. I rutenettet skal vi sette X eller 0 når vi spiller.
+Noen ganger trenger du mer enn en linje for å skrive funksjonen. Det kan du gjøre gjennom å putte "kroppen" av funksjonen mellom to krøllparenteser.
 
-## Verktøy
-### Bracket
-For å skrive kode i HTML, CSS ellerl JavaScript trenger vi ikke noe spesielt verktøy. Men verktøy kan gjøre det lettere for oss. Vi skal bruke [brackets.io](http://brackets.io). Dette er en enkel editor som har støtte for autocomplete og syntax-highlighting. Vi skal også utvide den med tillegget beautify for å autoformatere koden vår.
+```javascript
+var fly = () => {
+    console.log("En trollmann eller trollkvinne har kastet en formel for å fly");
+    return "Ascendio";
+};
+fly();
+```
 
-### Github
-* For å ta vare på koden vi skriver. 
-* For å kunne komme tilbake til "der vi var" hvis vi programmerer feil. 
-* For å få programmet vårt ut på internett.
-
-Lag en konto på github. Installer verktøy på egen pc.
+## La reisen begynne...
+Vi skal nå live-kode bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
