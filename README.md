@@ -15,14 +15,6 @@ Tripp-trapp-tresko
 
 _Beskriv reglene her_
 
--------------
-|   |   |   |
--------------
-|   |   |   |
--------------
-|   |   |   |
--------------
-
 ## Programmering i JavaScript
 For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
 
