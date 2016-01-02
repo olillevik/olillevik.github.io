@@ -2,17 +2,17 @@
 ved _Ørjan Markhus Lillevik_
 
 ## Hvorfor JavaScript i kodeklubben?
-JavaScript er det programmeringsspråket som brukes for å gi funksjonalitet i web-sider. Litt forenklet kan vi si at en webside er bygge opp av tre ting.
+JavaScript er det programmeringsspråket som brukes for å gi funksjonalitet i web-sider. Litt forenklet kan vi si at en webside er bygget opp av tre ting.
 
-1. HTML - gir struktur til websiden
-2. CSS - gir utseende til websiden
-3. JavaScript - gir funksjonalitet til websiden
+1. HTML - gir struktur til websiden som en knapp på en webside.
+2. CSS - gir utseende til websiden som utssende på knappen.
+3. JavaScript - gir funksjonalitet til websiden som hva som skjer når man trypper på knappen. 
 
 Internett er en av de viktigste oppfinnelsene til menneskeheten. Det er i dag det viktigste mediet for å formidle kunnskap til andre.
 
 
 ## Hva skal vi lage
-Vi skal lage spillet tripp-trapp-tresko også kalt bondesjakk. Vi skal lære oss å legge det ut på en webside slik at spillet er tilgjengelig for hvem som helst i hele verden.
+Vi skal lage spillet tripp-trapp-tresko, også kalt bondesjakk. Vi skal lære oss å legge det ut på en webside slik at spillet er tilgjengelig for hvem som helst i hele verden.
 
 Reglene for tripp-trapp-tresko kan leses på wikipedia side [https://no.wikipedia.org/wiki/Tripp-trapp-tresko](https://no.wikipedia.org/wiki/Tripp-trapp-tresko).
 
