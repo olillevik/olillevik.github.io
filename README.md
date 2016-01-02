@@ -40,15 +40,13 @@ harrysKonto = 1000;
 Hva skjer så når Harry ønsker å sette inn 3 gullmynter på kontoen sin. Da skal beløpet han har øke med tre gullmynter. Vi kan lage en funksjon for å sette inn penger på en konto.
 
 ```javascript
+//beregnInnskudd er variabelen som holder funksjonen.
+//konto og beløp er inn-variable (input variables).
+//nyttBeløpPaaKonto er ut-variabel (output).
+var beregnInnskudd = (konto, beløp) => var nyttBeløpPaaKonto = konto + beløp;
 
-    //beregnInnskudd er variabelen som holder funksjonen.
-    //konto og beløp er inn-variable (input variables).
-    //nyttBeløpPaaKonto er ut-variabel (output).
-    var beregnInnskudd = (konto, beløp) => var nyttBeløpPaaKonto = konto + beløp;
-
-    // Beregner ny verdi på kontoen og tilordner den nye verdien til variabelen konto.
-    konto = beregnNyttBeløpPaaKonto(konto, 3);
-
+// Beregner ny verdi på kontoen og tilordner den nye verdien til variabelen konto.
+konto = beregnNyttBeløpPaaKonto(konto, 3);
 ```
 
 Det finnes flere måter å lage funksjoner på i JavaScript. Om noen mener koden du skriver ser litt rar ut kan du svare at du bruker pilfunksjoner som ble tilgjengelige fra versjon ECMAScript6.
