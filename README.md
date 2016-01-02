@@ -12,23 +12,46 @@ Tripp-trapp-tresko
 _Diskuter reglene_
 
 ## Programmering i JavaScript
-For å lage tripp-trapp-tresko trenger vi å forstå følgende:
+For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
 
-1. Hva er en variabel
-2. Hva er en verdi
-3. Hva er en funksjon
+1. Variabel
+2. Verdi
+3. Funksjon
 
-La oss bruke bank som eksempel. La oss tenke oss at vi har en bankkonto. En slik bankkonto har et nummer. I eksempelet vårt så antar vi at nummeret er 111. Når du skal sjekke hvor mye penger du har i banken kan du slå opp på konto 111 og se hvor mye penger som er der. La oss anta at du har spart 1000 kroner.
+La oss forsøke å illustrere disse tre punktene gjennom et eksempel. La oss anta at Harry Potter har 1000 gullmynter på konto i Gringots og setter in 3 gullmynter.
+
 ### Variabel
-I eksempelet over kan bankkontoen din beskrives som en variabel. Det er altså tallet 111 i dette tilfellet. Variabelen holder på en verdi. I dette eksempelet holder den på et kronebeløp siden det er en variabel for en bankkonto.
+I eksempelet over kan kontoen til Harry beskrives med en variabel. La oss gi den et navn, _harrysKonto_. En variabel kan holde på en verdi eller en funksjon.
+
+```javascript
+// En variabel i JavaScript
+var harrysKonto;
+```
 
 ### Verdi
-Beløpet du har spart er en verdi. Du har spart 1000 kroner og verdien er da nettopp 1000 kroner. En verdi kan lagres i en variabel.
+Variabelen _harrysKonto_ holder på verdien av de pengene han har satt inn.
+
+```javascript
+// Tilordner verdien 1000 til variabelen.
+harrysKonto = 1000;
+```
 
 ### Funksjoner
-La oss anta at du ønsker å sette 100 kroner inn på bankkontoen din. Hva skjer da? Vi trenger en funksjon. Gjennom å bruke en funksjon kan man nemlig endre innholdet i en variabel.
+Hva skjer så når Harry ønsker å sette inn 3 gullmynter på kontoen sin. Da skal beløpet han har øke med tre gullmynter. Vi kan lage en funksjon for å sette inn penger på en konto.
 
-Noen kaller også funksjoner for metoder.
+```javascript
+
+    //beregnInnskudd er variabelen som holder funksjonen.
+    //konto og beløp er inn-variable (input variables).
+    //nyttBeløpPaaKonto er ut-variabel (output).
+    var beregnInnskudd = (konto, beløp) => var nyttBeløpPaaKonto = konto + beløp;
+
+    // Beregner ny verdi på kontoen og tilordner den nye verdien til variabelen konto.
+    konto = beregnNyttBeløpPaaKonto(konto, 3);
+
+```
+
+Det finnes flere måter å lage funksjoner på i JavaScript. Om noen mener koden du skriver ser litt rar ut kan du svare at du bruker pilfunksjoner som ble tilgjengelige fra versjon ECMAScript6.
 
 ## HTML/CSS/JavaScript
 Dette er ikke et HTML-kurs men litt trenger vi for å lage brettet. Vi skal lage en html-side med et rutenett. I rutenettet skal vi sette X eller 0 når vi spiller.
