@@ -91,3 +91,20 @@ fly();
 
 ## La reisen begynne...
 Vi skal nå live-kode bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
+
+### Opprett prosjektet på github
+
+### 
+Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vil.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head lang="no">
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+    </body>
+</html>
+```
