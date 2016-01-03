@@ -17,7 +17,7 @@
         if (sq.innerHTML !== "0" && sq.innerHTML !== "X") {
             drawMark(sq);
             saveMove(sq);
-            colourWinner();
+            colourWinningCombo();
             changePlayer();
         }
     };
@@ -26,7 +26,7 @@
 
     var saveMove = td => moves[td.id] = player;
 
-    var colourWinner = () => (winningCombos
+    var colourWinningCombo = () => (winningCombos
         .filter(isWinningCombo)
         .map(colourCombo));
 
