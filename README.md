@@ -254,6 +254,12 @@ Nå er det på tide å bytte spiller. Hvordan gjør vi det?
 ### Farg vinnende kombinasjon grønn
 _TODO_
 
+### Mulige utvidelser
+* Poengoversikt
+* Navn på deltakere
+* Nullstille spill med en knapp
+* Penere webside
+
 
     
 
