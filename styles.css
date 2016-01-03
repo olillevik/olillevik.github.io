@@ -1,6 +1,22 @@
-header {
+body {
+    margin: 3em;
+}
+
+.header-container {
+    display: flex;
     text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.header-container a {
+    text-decoration: none;
+}
+
+.header-container .header-item {
     background-color: darkgrey;
+    flex: 1;
+    margin: 1px;
 }
 
 .flex-row {
@@ -8,12 +24,12 @@ header {
     justify-content: center;
 }
 
-.flex-item {
+.flex-row .flex-item {
     background-color: lightgrey;
-    height: 25vh;
-    width: 25vh;
     margin: -1px;
     border: 2px solid black;
     text-align: center;
-    font-size: 22vh;
+    min-width: 20vh;
+    min-height: 20vh;
+    font-size: 20vh;
 }
