@@ -14,7 +14,7 @@
         ["3", "6", "9"]];
 
     window.play = (sq) => {
-        if (sq.innerHTML !== "0" && sq.innerHTML !== "X") {
+        if (free(sq)) {
             drawMark(sq);
             saveMove(sq);
             colourWinningCombos();
@@ -22,9 +22,11 @@
         }
     };
 
-    var drawMark = td => td.innerHTML = player;
+    var free = sq => sq.innerHTML !== "0" && sq.innerHTML !== "X";
 
-    var saveMove = td => moves[td.id] = player;
+    var drawMark = sq => sq.innerHTML = player;
+
+    var saveMove = sq => moves[sq.id] = player;
 
     var colourWinningCombos = () => (winningCombos
         .filter(ownedByPlayer)
