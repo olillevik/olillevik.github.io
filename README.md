@@ -249,5 +249,9 @@ Nå er det på tide å bytte spiller. Hvordan gjør vi det?
     </div>
 ```
 
+### Farg vinnende kombinasjon grønn
+_TODO_
+
+
     
 
