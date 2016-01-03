@@ -32,63 +32,6 @@ For å skrive kode i HTML, CSS ellerl JavaScript trenger vi ikke noe spesielt ve
 
 Lag en konto på [http://github.com](http://github.com). Installer desktop-klienten til github på pcen din [https://desktop.github.com/](https://desktop.github.com/).
 
-## Programmering i JavaScript
-For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
-
-1. Variabel
-2. Verdi
-3. Funksjon
-
-La oss forsøke å illustrere disse tre punktene gjennom et eksempel. La oss anta at Harry Potter har 1000 gullmynter på konto i Gringots og setter in 3 gullmynter.
-
-Gjennom hele eksempelet kan du prøve koden i din egen nettleser. Åpne Chrome. Trykk F12. I Console kan du nå skrive inn kode. Hver gang du trykker _enter_ kjøres koden av nettleseren.
-
-### Variabel
-I eksempelet over kan kontoen til Harry beskrives med en variabel. La oss gi den et navn, _harrysKonto_. En variabel kan holde på en verdi eller en funksjon.
-
-```javascript
-// En variabel i JavaScript
-var harrysKonto;
-```
-
-### Verdi
-Variabelen _harrysKonto_ holder på verdien av de pengene han har satt inn.
-
-```javascript
-// Tilordner verdien 1000 til variabelen.
-harrysKonto = 1000;
-```
-
-### Funksjoner
-Hva skjer så når Harry ønsker å sette inn 3 gullmynter på kontoen sin. Da skal beløpet han har øke med tre gullmynter. Vi kan lage en funksjon for å sette inn penger på en konto.
-
-```javascript
-//beregnInnskudd er variabelen som holder funksjonen.
-//konto og beløp er inn-variable (input variables).
-//nyttBeløpPaaKonto er ut-variabel (output).
-var beregnInnskudd = (konto, belop) => nyttBelopPaaKonto = konto + belop;
-
-// Beregner ny verdi på kontoen og tilordner den nye verdien til variabelen konto.
-harrysKonto = beregnInnskudd(harrysKonto, 3);
-```
-
-Funksjoner har ingen, en eller flere inputvariable. Dersom du ikke ønsker å ha noen inputvariabel kan du skrive det slik:
-
-```javascript
-var fly = () => "Ascendio";
-fly();
-```
-
-Noen ganger trenger du mer enn en linje for å skrive funksjonen. Det kan du gjøre gjennom å putte "kroppen" av funksjonen mellom to krøllparenteser.
-
-```javascript
-var fly = () => {
-    console.log("En trollmann eller trollkvinne har kastet en formel for å fly");
-    return "Ascendio";
-};
-fly();
-```
-
 ## La reisen begynne...
 Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
 
@@ -200,6 +143,65 @@ Legg så til `class="flex-item"` på de fire divene som er inni flex-containere.
         <div class="flex-item">&nbsp;</div>
     </div>
 ```
+
+## Programmering i JavaScript
+For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
+
+1. Variabel
+2. Verdi
+3. Funksjon
+
+La oss forsøke å illustrere disse tre punktene gjennom et eksempel. La oss anta at Harry Potter har 1000 gullmynter på konto i Gringots og setter in 3 gullmynter.
+
+Gjennom hele eksempelet kan du prøve koden i din egen nettleser. Åpne Chrome. Trykk F12. I Console kan du nå skrive inn kode. Hver gang du trykker _enter_ kjøres koden av nettleseren.
+
+### Variabel
+I eksempelet over kan kontoen til Harry beskrives med en variabel. La oss gi den et navn, _harrysKonto_. En variabel kan holde på en verdi eller en funksjon.
+
+```javascript
+// En variabel i JavaScript
+var harrysKonto;
+```
+
+### Verdi
+Variabelen _harrysKonto_ holder på verdien av de pengene han har satt inn.
+
+```javascript
+// Tilordner verdien 1000 til variabelen.
+harrysKonto = 1000;
+```
+
+### Funksjoner
+Hva skjer så når Harry ønsker å sette inn 3 gullmynter på kontoen sin. Da skal beløpet han har øke med tre gullmynter. Vi kan lage en funksjon for å sette inn penger på en konto.
+
+```javascript
+//beregnInnskudd er variabelen som holder funksjonen.
+//konto og beløp er inn-variable (input variables).
+//nyttBeløpPaaKonto er ut-variabel (output).
+var beregnInnskudd = (konto, belop) => nyttBelopPaaKonto = konto + belop;
+
+// Beregner ny verdi på kontoen og tilordner den nye verdien til variabelen konto.
+harrysKonto = beregnInnskudd(harrysKonto, 3);
+```
+
+Funksjoner har ingen, en eller flere inputvariable. Dersom du ikke ønsker å ha noen inputvariabel kan du skrive det slik:
+
+```javascript
+var fly = () => "Ascendio";
+fly();
+```
+
+Noen ganger trenger du mer enn en linje for å skrive funksjonen. Det kan du gjøre gjennom å putte "kroppen" av funksjonen mellom to krøllparenteser.
+
+```javascript
+var fly = () => {
+    console.log("En trollmann eller trollkvinne har kastet en formel for å fly");
+    return "Ascendio";
+};
+fly();
+```
+
+## La reisen fortsette
 
 ### La oss krydre med litt JavaScript
 Vi starter med litt magi. Koden under sørger for at JavaScript-koden lastes inn når den importeres av en web-side. Opprett filen script.js og legg inn koden under.
