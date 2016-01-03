@@ -201,6 +201,25 @@ Legg så til `class="flex-item"` på de fire divene som er inni flex-containere.
     </div>
 ```
 
+### La oss krydre med litt JavaScript
+Vi starter med litt magi. Koden under sørger for at JavaScript-koden lastes inn når den importeres av en web-side. Opprett filen script.js og legg inn koden under.
+
+```javascript
+(() => {
+    'use strict';
+    //skriv koden din her
+})();
+```
+
+### La oss spille...
+Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. Vi trenger en funksjon som tar imot hvilken rute som ble klikket på og oppdaterer innholdet i ruten.
+
+```javascript
+    window.play = (sq) => {
+        sq.innerHTML = 0;
+    };
+```
+
 ### La oss fullføre rutenettet vårt
 
 ```html
@@ -221,18 +240,5 @@ Legg så til `class="flex-item"` på de fire divene som er inni flex-containere.
     </div>
 ```
 
-
-
-### La oss krydre med litt JavaScript
-Vi starter med litt magi. Koden under sørger for at JavaScript-koden lastes inn når den importeres av en web-side.
-
-```javascript
-(() => {
-    'use strict';
-    //skriv koden din her
-})();
-```
-
-_lag play-metoden, kjør console.log ett eller annet og fyr ved trykk på en rute._
     
 
