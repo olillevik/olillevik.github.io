@@ -219,24 +219,33 @@ Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. V
         sq.innerHTML = 0;
     };
 ```
+### Kall funksjonen når du trykker i en rute
+For hver av rutene våre må vi legge til _onclick=..._ og fortelle hva som skal skje.
+```html
+    <div class="flex-item" onclick="play(this)">&nbsp;</div>
+```
+
+Nå er det på tide å bytte spiller. Hvordan gjør vi det?
+
+>Tips! Opprett en variabel som holder styr på hvilket merke som skal settes. Bytt mellom 0 og X avhengig av hvem som spilte sist.
 
 ### La oss fullføre rutenettet vårt
 
 ```html
 <div class="flex-container">
-        <div class="flex-item" id="1" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" id="2" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" id="3" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
     </div>
     <div class="flex-container">
-        <div class="flex-item" id="4" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" id="5" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" id="6" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
     </div>
     <div class="flex-container">
-        <div class="flex-item" id="7" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" id="8" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" id="9" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" onclick="play(this)">&nbsp;</div>
     </div>
 ```
 
