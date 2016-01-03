@@ -260,6 +260,7 @@ _TODO_
 * Navn på deltakere
 * Nullstille spill med en knapp
 * Penere webside
+* Spille mot AI
 
 
     
