@@ -2,29 +2,28 @@ body {
     margin: 3em;
 }
 
-.header-container {
-    display: flex;
-    text-align: center;
-    font-size: 3em;
-    margin-bottom: 1em;
+header {
+    margin-bottom: 3em;
 }
 
-.header-container a {
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container a {
     text-decoration: none;
 }
 
-.header-container .header-item {
+.flex-container .header-item {
+    font-size: 3em;
+    text-align: center;
     background-color: darkgrey;
     flex: 1;
     margin: 1px;
 }
 
-.flex-row {
-    display: flex;
-    justify-content: center;
-}
-
-.flex-row .flex-item {
+.flex-container .flex-item {
     background-color: lightgrey;
     margin: -1px;
     border: 2px solid black;

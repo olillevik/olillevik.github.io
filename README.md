@@ -116,41 +116,43 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
 <html>
     <head lang="no">
         <meta charset="utf-8" />
-        <title>Bondesjakk</title>
+        <title>Min tittel</title>
     </head>
 
     <body>
-        <h1>Bondesjakk</h1>
+        <h1>En overskrift</h1>
+        <p>Her kan jeg skrive et avsnitt om hva jeg måtte ønske.</p>
     </body>
 </html>
 ```
 
-### Lag et rutenett
+### En ny side for bondesjakk
+
+Opprett en fil kalt tic-tac-toe.html.
 
 ```html
-<table>
-    <tr><td>Celle 1 - rad 1</td><td>Celle 2 - rad 1</td></tr>
-    <tr><td>Celle 1 - rad 2</td><td>Celle 2 - rad 2</td></tr>
-</table>
+<header class="flex-container">
+        <a href="index.html" class="header-item">Home</a>
+        <a href="tic-tac-toe.html" class="header-item">Tic-tac-toe</a>
+    </header>
+    <article>
+        <h1>En overskrift</h1>
+        <p>Her kan jeg skrive et avsnitt om hva jeg måtte ønske.</p>
+    </article>
 ```
-
-### Endre utseende
-Lag en fil kalt styles.css.
-
+Men det ser jo ikke så pent ut. Vi endrer utseendet ved å legge å opprette filen _styles.css_ og legge til følgende:
 ```css
-header {
-    background-color: lightgrey;
-    min-height: 4em;
+.flex-container {
+    display: flex;
+    justify-content: center;
 }
 
-td {
-    border: 2px solid black;
-    font-size: 5em;
-    width: 2em;
-    height: 2em;
+.flex-container .header-item {
+    font-size: 3em;
     text-align: center;
-    vertical-align: middle;
-    background-color: lightgrey
+    background-color: darkgrey;
+    flex: 1;
+    margin: 1px;
 }
 ```
 
@@ -159,6 +161,67 @@ Importer css-filen i index.html.
 ```html
 <link rel="stylesheet" href="styles.css">
 ```
+
+### La spillet begynne
+
+Vi trenger et rutenett.
+
+```html
+<div class="flex-container">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+    </div>
+    <div class="flex-container">
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+    </div>
+```
+
+La oss fikse på utseende før vi går videre. Åpne _styles.css_ og legg til følgende:
+
+```css
+.flex-container .flex-item {
+    background-color: lightgrey;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 20vh;
+}
+```
+
+Legg så til `class="flex-item"` på de fire divene som er inni flex-containere. Da ser det slik ut: 
+
+```html
+<div class="flex-container">
+        <div class="flex-item">&nbsp;</div>
+        <div class="flex-item">&nbsp;</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">&nbsp;</div>
+        <div class="flex-item">&nbsp;</div>
+    </div>
+```
+
+### La oss fullføre rutenettet vårt
+
+```html
+<div class="flex-container">
+        <div class="flex-item" id="1" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" id="2" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" id="3" onclick="play(this)">&nbsp;</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item" id="4" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" id="5" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" id="6" onclick="play(this)">&nbsp;</div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item" id="7" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" id="8" onclick="play(this)">&nbsp;</div>
+        <div class="flex-item" id="9" onclick="play(this)">&nbsp;</div>
+    </div>
+```
+
+
 
 ### La oss krydre med litt JavaScript
 Vi starter med litt magi. Koden under sørger for at JavaScript-koden lastes inn når den importeres av en web-side.
