@@ -170,6 +170,6 @@ Vi starter med litt magi. Koden under sørger for at JavaScript-koden lastes inn
 })();
 ```
 
-_lag play-metoden, kjør console.log ett eller annet_ og fyr ved trykk på en rute.
+_lag play-metoden, kjør console.log ett eller annet og fyr ved trykk på en rute._
     
 

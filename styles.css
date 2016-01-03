@@ -1,14 +1,19 @@
 header {
-    background-color: lightgrey;
-    min-height: 4em;
+    text-align: center;
+    background-color: darkgrey;
 }
 
-td {
+.flex-row {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-item {
+    background-color: lightgrey;
+    height: 25vh;
+    width: 25vh;
+    margin: -1px;
     border: 2px solid black;
-    font-size: 5em;
-    width: 2em;
-    height: 2em;
     text-align: center;
-    vertical-align: middle;
-    background-color: lightgrey
+    font-size: 22vh;
 }
