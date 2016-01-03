@@ -36,6 +36,7 @@ Lag en konto på [http://github.com](http://github.com). Installer desktop-klien
 Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
 
 ### Opprett prosjektet på github
+_TODO_
 
 ### Lag en webside
 Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vil.
