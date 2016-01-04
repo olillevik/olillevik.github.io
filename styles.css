@@ -1,34 +1,36 @@
-body {
-    margin: 3em;
-}
-
-header {
-    margin-bottom: 3em;
-}
-
-.flex-container {
+.flex-box {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.flex-container a {
+.flex-1 {
+    flex: 1;
+}
+
+header,
+article {
+    margin: 30px;
+}
+
+header a {
+    margin: 1px;
+    background-color: darkgrey;
+    font-size: 3em;
+    text-align: center;
     text-decoration: none;
 }
 
-.flex-container .header-item {
-    font-size: 3em;
-    text-align: center;
-    background-color: darkgrey;
-    flex: 1;
-    margin: 1px;
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: lightgrey;
 }
 
-.flex-container .flex-item {
-    background-color: lightgrey;
-    margin: -1px;
-    border: 2px solid black;
-    text-align: center;
-    min-width: 20vh;
+td {
+    border: 3px solid black;
     min-height: 20vh;
+    min-width: 20vh;
     font-size: 20vh;
+    text-align: center;
 }
