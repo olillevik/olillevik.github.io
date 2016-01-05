@@ -269,9 +269,9 @@ Nå er det på tide å bytte spiller. Hvordan gjør vi det?
 _TODO_
 
 ### Mulige utvidelser
-* Poengoversikt
-* Navn på deltakere
-* Nullstille spill med en knapp
+* Poengoversikt (/)
+* Nullstille spill med en knapp (/)
+* Fortelle hvem som er neste spiller
 * Penere webside
 * Spille mot AI
 

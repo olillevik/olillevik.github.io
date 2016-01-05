@@ -1,36 +1,56 @@
-.flex-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.flex-1 {
-    flex: 1;
-}
-
-header,
-article {
-    margin: 30px;
-}
-
-header a {
-    margin: 1px;
-    background-color: darkgrey;
-    font-size: 3em;
-    text-align: center;
-    text-decoration: none;
-}
-
-table {
-    table-layout: fixed;
-    border-collapse: collapse;
-    background-color: lightgrey;
-}
-
-td {
-    border: 3px solid black;
-    min-height: 20vh;
-    min-width: 20vh;
-    font-size: 20vh;
-    text-align: center;
-}
+    .flex-box {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+    
+    .flex-left {
+        justify-content: flex-start;
+    }
+    
+    .flex-1 {
+        flex: 1;
+        min-width: 65vh;
+    }
+    
+    header,
+    article {
+        margin: 30px;
+    }
+    
+    header a {
+        margin: 1px;
+        background-color: darkgrey;
+        font-size: 3em;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    table {
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+    
+    td {
+        border: 3px solid black;
+        min-height: 20vh;
+        min-width: 20vh;
+        font-size: 20vh;
+        text-align: center;
+        background-color: lightgrey;
+    }
+    
+    button {
+        width: 150px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    
+    #score {
+        font-size: 3em;
+    }
+    
+    .scoreLabel {
+        min-width: 80px;
+        float: left;
+    }

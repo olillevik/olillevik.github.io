@@ -14,23 +14,39 @@
         <a href="tic-tac-toe.html" class="link flex-1">Tic-tac-toe</a>
     </header>
     <article class="flex-box">
-        <table>
-            <tr>
-                <td id="1" onclick="play(this)">&nbsp</td>
-                <td id="2" onclick="play(this)" />
-                <td id="3" onclick="play(this)" />
-            </tr>
-            <tr>
-                <td id="4" onclick="play(this)">&nbsp </td>
-                <td id="5" onclick="play(this)" />
-                <td id="6" onclick="play(this)" />
-            </tr>
-            <tr>
-                <td id="7" onclick="play(this)">&nbsp </td>
-                <td id="8" onclick="play(this)" />
-                <td id="9" onclick="play(this)" />
-            </tr>
-        </table>
+        <div class="flex-1">
+            <table class="flex-1 flex-box flex-center">
+                <tr>
+                    <td id="1" onclick="play(this)">&nbsp</td>
+                    <td id="2" onclick="play(this)" />
+                    <td id="3" onclick="play(this)" />
+                </tr>
+                <tr>
+                    <td id="4" onclick="play(this)">&nbsp </td>
+                    <td id="5" onclick="play(this)" />
+                    <td id="6" onclick="play(this)" />
+                </tr>
+                <tr>
+                    <td id="7" onclick="play(this)">&nbsp </td>
+                    <td id="8" onclick="play(this)" />
+                    <td id="9" onclick="play(this)" />
+                </tr>
+            </table>
+        </div>
+        <div class="flex-box flex-1">
+            <div id="score">
+                <h1>Score</h1>
+                <div>
+                    <div class="scoreLabel">X:</div>
+                    <div id="playerX">0</div>
+                </div>
+                <div>
+                    <div class="scoreLabel">0:</div>
+                    <div id="player0">0</div>
+                </div>
+                <button onclick="reset()">Reset</button>
+            </div>
+        </div>
     </article>
 </body>
 
