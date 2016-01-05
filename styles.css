@@ -2,7 +2,6 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
-        margin: 30px;
     }
     
     .flex-left {
@@ -12,6 +11,10 @@
     .flex-1 {
         flex: 1;
         min-width: 65vh;
+    }
+    
+    header {
+        margin-bottom: 30px;
     }
     
     header a {
@@ -29,9 +32,9 @@
     
     td {
         border: 3px solid black;
-        min-height: 19vh;
-        min-width: 19vh;
-        font-size: 19vh;
+        min-height: 20vh;
+        min-width: 20vh;
+        font-size: 20vh;
         text-align: center;
         background-color: lightgrey;
     }
