@@ -48,7 +48,7 @@
         if (winningCombos.filter(ownedByPlayer).length > 0) {
             if (player === "X") {
                 scoreX++;
-                document.getElementById("player" + player).innerHTML = (scoreX);
+                document.getElementById("player" + player).innerHTML = (scoreX++);
             } else if (player === "0") {
                 score0++;
                 document.getElementById("player" + player).innerHTML = (score0);
