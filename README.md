@@ -75,9 +75,9 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
 Opprett en fil kalt tic-tac-toe.html.
 
 ```html
-<header class="flex-container">
-        <a href="index.html" class="header-item">Home</a>
-        <a href="tic-tac-toe.html" class="header-item">Tic-tac-toe</a>
+<header class="flex-box">
+        <a href="index.html" class="link flex-1">Home</a>
+        <a href="tic-tac-toe.html" class="link flex-1">Tic-tac-toe</a>
     </header>
     <article>
         <h1>En overskrift</h1>
@@ -86,18 +86,24 @@ Opprett en fil kalt tic-tac-toe.html.
 ```
 Men det ser jo ikke så pent ut. Vi endrer utseendet ved å legge å opprette filen _styles.css_ og legge til følgende:
 ```css
-.flex-container {
+.flex-box {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.flex-container .header-item {
+.flex-1 {
+    flex: 1;
+}
+
+header a {
+    margin: 1px;
+    background-color: darkgrey;
     font-size: 3em;
     text-align: center;
-    background-color: darkgrey;
-    flex: 1;
-    margin: 1px;
+    text-decoration: none;
 }
+
 ```
 
 Importer css-filen i index.html.
@@ -106,43 +112,48 @@ Importer css-filen i index.html.
 <link rel="stylesheet" href="styles.css">
 ```
 
+Legg klassene til header og linkelement.
+
+```html
+<header class="flex-box">
+        <a href="index.html" class="link flex-1">Home</a>
+        <a href="tic-tac-toe.html" class="link flex-1">Tic-tac-toe</a>
+</header>
+```
+
 ### La spillet begynne
 
 Vi trenger et rutenett.
 
 ```html
-<div class="flex-container">
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-    </div>
-    <div class="flex-container">
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-    </div>
+<table>
+    <tr>
+        <td>&nbsp</td>
+        <td/>
+    </tr>
+    <tr>
+        <td>&nbsp </td>
+        <td/>    
+    </tr>
+</table>
 ```
 
 La oss fikse på utseende før vi går videre. Åpne _styles.css_ og legg til følgende:
 
 ```css
-.flex-container .flex-item {
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
     background-color: lightgrey;
-    border: 2px solid black;
-    text-align: center;
-    font-size: 20vh;
 }
-```
 
-Legg så til `class="flex-item"` på de fire divene som er inni flex-containere. Da ser det slik ut: 
-
-```html
-<div class="flex-container">
-        <div class="flex-item">&nbsp;</div>
-        <div class="flex-item">&nbsp;</div>
-    </div>
-    <div class="flex-container">
-        <div class="flex-item">&nbsp;</div>
-        <div class="flex-item">&nbsp;</div>
-    </div>
+td {
+    border: 3px solid black;
+    min-height: 20vh;
+    min-width: 20vh;
+    font-size: 20vh;
+    text-align: center;
+}
 ```
 
 ## Programmering i JavaScript
@@ -225,7 +236,7 @@ Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. V
 ### Kall funksjonen når du trykker i en rute
 For hver av rutene våre må vi legge til _onclick=..._ og fortelle hva som skal skje.
 ```html
-    <div class="flex-item" onclick="play(this)">&nbsp;</div>
+    <td id="1" onclick="play(this)">&nbsp</td>
 ```
 
 Nå er det på tide å bytte spiller. Hvordan gjør vi det?
@@ -235,21 +246,23 @@ Nå er det på tide å bytte spiller. Hvordan gjør vi det?
 ### La oss fullføre rutenettet vårt
 
 ```html
-<div class="flex-container">
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-    </div>
-    <div class="flex-container">
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-    </div>
-    <div class="flex-container">
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-        <div class="flex-item" onclick="play(this)">&nbsp;</div>
-    </div>
+<table>
+    <tr>
+        <td id="1" onclick="play(this)">&nbsp</td>
+        <td id="2" onclick="play(this)" />
+        <td id="3" onclick="play(this)" />
+    </tr>
+    <tr>
+        <td id="4" onclick="play(this)">&nbsp </td>
+        <td id="5" onclick="play(this)" />
+        <td id="6" onclick="play(this)" />
+    </tr>
+    <tr>
+        <td id="7" onclick="play(this)">&nbsp </td>
+        <td id="8" onclick="play(this)" />
+        <td id="9" onclick="play(this)" />
+    </tr>
+</table>
 ```
 
 ### Farg vinnende kombinasjon grønn
