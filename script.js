@@ -1,11 +1,17 @@
 (() => {
     'use strict';
+    
+    // hjelpemetoder
+    var el = id => document.getElementById(id + "");
+    
+    const brett = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
+    // modell
     var player = "0";
     var scoreX = "0";
     var score0 = "0"
     var moves = [];
-    var winningCombos = [
+    const winningCombos = [
         ["1", "2", "3"],
         ["4", "5", "6"],
         ["7", "8", "9"],
@@ -15,7 +21,8 @@
         ["2", "5", "8"],
         ["3", "6", "9"]];
 
-    window.play = (sq) => {
+    // oppdater
+    var play = (sq) => {
         if (free(sq)) {
             drawMark(sq);
             saveMove(sq);
@@ -25,20 +32,17 @@
         }
     };
 
-    window.reset = () => {
-        for (var i = 1; i <= 9; i++) {
-            document.getElementById(i + "").innerHTML = "&nbsp";
-            document.getElementById(i + "").style.backgroundColor = "lightgray";
-        }
+    var reset = () => {
+        brett.map(id => el(id).innerHTML = "&nbsp");
+        brett.map(id => el(id).style.backgroundColor = "lightgray");
         moves = [];
-
     }
 
     var free = sq => sq.innerHTML !== "0" && sq.innerHTML !== "X";
 
-    var drawMark = sq => sq.innerHTML = player;
+    var drawMark = sq => el(sq).innerHTML = player;
 
-    var saveMove = sq => moves[sq.id] = player;
+    var saveMove = sq => moves[sq] = player;
 
     var colourWinningCombos = () => winningCombos
         .filter(ownedByPlayer)
@@ -48,10 +52,10 @@
         if (winningCombos.filter(ownedByPlayer).length > 0) {
             if (player === "X") {
                 scoreX++;
-                document.getElementById("player" + player).innerHTML = (scoreX++);
+                el("player" + player).innerHTML = (scoreX++);
             } else if (player === "0") {
                 score0++;
-                document.getElementById("player" + player).innerHTML = (score0);
+                el("player" + player).innerHTML = (score0);
             }
         }
     };
@@ -61,8 +65,12 @@
         .length === 3);
 
     var colourCombo = combo => (combo
-        .map(sq => document.getElementById(sq + "").style.backgroundColor = "green"));
+        .map(sq => el(sq).style.backgroundColor = "green"));
 
     var changePlayer = () => (player === "0") ? player = "X" : player = "0";
+    
+    //Input hendelser
+    brett.map(id => el(id).addEventListener("click", () => play(id)));    
+    el("reset").addEventListener("click", () => reset());
 
 })();
