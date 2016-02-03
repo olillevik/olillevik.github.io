@@ -18,8 +18,8 @@ Reglene for tripp-trapp-tresko kan leses på wikipedia side [https://no.wikipedi
 
 ## Hva trenger vi
 
-1. Nettleseren Chrome eller Firefox.
-2. Teksteditoren [Brackets.io](http://brackets.io)
+1. Nettleseren Chrome eller Firefox (fungerer ikke for Internett Explorer - mangler støtte for pilfunksjoner).
+2. En teksteditor - [Brackets.io](http://brackets.io)
 3. En Github-konto [http://github.com](http://github.com)
 
 ### Bracket
