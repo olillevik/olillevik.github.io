@@ -39,19 +39,19 @@
         text-align: center;
         background-color: lightgrey;
     }
+
+    .em3{
+        font-size: 3em;
+    }
     
+    .poenglinje {   
+        min-width: 80px;
+        float: left;
+    }
+
     button {
         width: 180px;
         height: 80px;
         margin-top: 10px;
-        font-size: 1em;
-    }
-    
-    #score {
-        font-size: 3em;
-    }
-    
-    .scoreLabel {
-        min-width: 80px;
-        float: left;
+        font-size: 0.8em;
     }

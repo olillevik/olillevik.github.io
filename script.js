@@ -3,15 +3,15 @@
     
     // hjelpemetoder
     var el = id => document.getElementById(id + "");
-    
-    const brett = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
     // modell
-    var player = "0";
-    var scoreX = "0";
-    var score0 = "0"
-    var moves = [];
-    const winningCombos = [
+    var spiller = "0";
+    var poengX = "0";
+    var poeng0 = "0"
+    var trekk = [];
+    
+    const brett = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    const vinnerkombinasjoner = [
         ["1", "2", "3"],
         ["4", "5", "6"],
         ["7", "8", "9"],
@@ -22,55 +22,55 @@
         ["3", "6", "9"]];
 
     // oppdater
-    var play = (sq) => {
-        if (free(sq)) {
-            drawMark(sq);
-            saveMove(sq);
-            colourWinningCombos();
-            scoreCombo();
-            changePlayer();
+    var gjoerTrekk = (felt) => {
+        if (ledig(felt)) {
+            tegnMerke(felt);
+            lagreTrekk(felt);
+            fargVinner();
+            giPoeng();
+            byttSpiller();
         }
     };
 
-    var reset = () => {
-        brett.map(id => el(id).innerHTML = "&nbsp");
-        brett.map(id => el(id).style.backgroundColor = "lightgray");
-        moves = [];
-    }
+    var ledig = felt => trekk.filter(fylt => fylt === felt); 
 
-    var free = sq => sq.innerHTML !== "0" && sq.innerHTML !== "X";
+    var tegnMerke = felt => el(felt).innerHTML = spiller;
 
-    var drawMark = sq => el(sq).innerHTML = player;
+    var lagreTrekk = felt => trekk[felt] = spiller;
 
-    var saveMove = sq => moves[sq] = player;
+    var fargVinner = () => vinnerkombinasjoner
+        .filter(eietAvSpiller)
+        .map(fargKombinasjon);
 
-    var colourWinningCombos = () => winningCombos
-        .filter(ownedByPlayer)
-        .map(colourCombo);
-
-    var scoreCombo = () => {
-        if (winningCombos.filter(ownedByPlayer).length > 0) {
-            if (player === "X") {
-                scoreX++;
-                el("player" + player).innerHTML = (scoreX++);
-            } else if (player === "0") {
-                score0++;
-                el("player" + player).innerHTML = (score0);
+    var giPoeng = () => {
+        if (vinnerkombinasjoner.filter(eietAvSpiller).length > 0) {
+            if (spiller === "X") {
+                poengX++;
+                el("spiller" + spiller).innerHTML = (poengX);
+            } else if (spiller === "0") {
+                poeng0++;
+                el("spiller" + spiller).innerHTML = (poeng0);
             }
         }
     };
 
-    var ownedByPlayer = combo => (combo
-        .filter(sq => moves[sq] === player)
+    var eietAvSpiller = combo => (combo
+        .filter(felt => trekk[felt] === spiller)
         .length === 3);
 
-    var colourCombo = combo => (combo
-        .map(sq => el(sq).style.backgroundColor = "green"));
+    var fargKombinasjon = combo => (combo
+        .map(felt => el(felt).style.backgroundColor = "green"));
 
-    var changePlayer = () => (player === "0") ? player = "X" : player = "0";
+    var byttSpiller = () => (spiller === "0") ? spiller = "X" : spiller = "0";
+     
+    var nyttSpill = () => {
+        brett.map(id => el(id).innerHTML = "&nbsp");
+        brett.map(id => el(id).style.backgroundColor = "lightgray");
+        trekk = [];
+    }
     
-    //Input hendelser
-    brett.map(id => el(id).addEventListener("click", () => play(id)));    
-    el("reset").addEventListener("click", () => reset());
+    // hendelser
+    brett.map(id => el(id).addEventListener("click", () => gjoerTrekk(id)));    
+    el("nyttSpill").addEventListener("click", () => nyttSpill());
 
 })();
