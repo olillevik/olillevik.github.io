@@ -45,11 +45,9 @@
     var giPoeng = () => {
         if (vinnerkombinasjoner.filter(eietAvSpiller).length > 0) {
             if (spiller === "X") {
-                poengX++;
-                el("spiller" + spiller).innerHTML = (poengX);
+                el("spiller" + spiller).innerHTML = (++poengX);
             } else if (spiller === "0") {
-                poeng0++;
-                el("spiller" + spiller).innerHTML = (poeng0);
+                el("spiller" + spiller).innerHTML = (++poeng0);
             }
         }
     };
