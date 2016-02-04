@@ -54,12 +54,11 @@
         }
     };
 
-    var eietAvSpiller = combo => (combo
+    var eietAvSpiller = kombo => kombo
         .filter(felt => trekk[felt] === spiller)
-        .length === 3);
+        .length === 3;
 
-    var fargKombinasjon = combo => (combo
-        .map(felt => el(felt).style.backgroundColor = "green"));
+    var fargKombinasjon = kombo => kombo.map(felt => el(felt).style.backgroundColor = "green");
 
     var byttSpiller = () => (spiller === "0") ? spiller = "X" : spiller = "0";
      
