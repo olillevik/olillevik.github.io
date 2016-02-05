@@ -9,7 +9,6 @@
         var poengX = "0";
         var poeng0 = "0";
         var trekk = ["", "", "", "", "", "", "", "", ""];
-        var vinnerkombinasjon = [];
     
     // konstanter
     const brett = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
@@ -27,7 +26,6 @@
         if (ledig(felt)) {
             // Oppdater modell
             lagreTrekk(felt);
-            finnVinnerkombo();
             giPoeng();
             byttSpiller();
             
@@ -42,13 +40,13 @@
     
     var lagreTrekk = felt => trekk[felt] = spiller;
     
-    var finnVinnerkombo = () => vinnerkombinasjoner.filter(eietAvSpiller).map(kombo => vinnerkombinasjon.push(kombo)); 
+    var finnVinnerkombo = () => vinnerkombinasjoner.filter(kombo => eietAvSpiller(kombo));
     var eietAvSpiller = kombo => kombo
         .filter(felt => trekk[felt] === spiller)
         .length === 3;
     
     var giPoeng = () => {
-        if (vinnerkombinasjon.length > 0) {
+        if (finnVinnerkombo().length>0) {
             if (spiller === "X") {
                 ++poengX;
             } else if (spiller === "0") {
@@ -59,14 +57,14 @@
     
     var byttSpiller = () => (spiller === "0") ? spiller = "X" : spiller = "0";
 
-    var tegnMerke = felt => el(felt).innerHTML = spiller; 
+    var tegnMerke = felt => el(felt).innerHTML = trekk[felt]; 
 
-    var fargVinnerkombo = () => vinnerkombinasjon.map(kombo => fargFelt(kombo));
+    var fargVinnerkombo = () => finnVinnerkombo().map(kombo => fargFelt(kombo));
     var fargFelt = kombo => kombo.map(felt => el(felt).style.backgroundColor = "green");
 
     var oppdaterPoeng = () => {
-        el("spiller" + spiller).innerHTML = (poengX);
-        el("spiller" + spiller).innerHTML = (++poeng0);
+        el("spillerX").innerHTML = (poengX);
+        el("spiller0").innerHTML = (poeng0);
     };
     
     var nyttSpill = () => {
