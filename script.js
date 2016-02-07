@@ -27,12 +27,14 @@
             // Oppdater modell
             lagreTrekk(felt);
             giPoeng();
-            byttSpiller();
             
             // Oppdater webside
             tegnMerke(felt);
             fargVinnerkombo();
             oppdaterPoeng();
+            
+            // Ny runde klar
+            byttSpiller();
         }           
     };
 
