@@ -5,7 +5,7 @@
     var el = id => document.getElementById(id + "");
 
     // modell
-    var spiller = "0";
+    var spiller = "";
     var trekk = ["", "", "", "", "", "", "", "", ""];
     
     // konstanter
@@ -13,8 +13,8 @@
     
     var gjoerTrekk = (felt) => {
         // Oppdater modell
+        settSpiller();
         lagreTrekk(felt);
-        byttSpiller();
             
         // Oppdater webside
         tegnMerke(felt);
@@ -22,7 +22,7 @@
     
     var lagreTrekk = felt => trekk[felt] = spiller;
     
-    var byttSpiller = () => (spiller === "0") ? spiller = "X" : spiller = "0";
+    var settSpiller = () => (spiller === "0") ? spiller = "X" : spiller = "0";
 
     var tegnMerke = felt => el(felt).innerHTML = trekk[felt]; 
     

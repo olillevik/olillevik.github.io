@@ -5,7 +5,7 @@
     var el = id => document.getElementById(id + "");
 
     // modell
-    var spiller = "0";
+    var spiller = "";
     var poengX = "0";
     var poeng0 = "0";
     var trekk = ["", "", "", "", "", "", "", "", ""];
@@ -22,23 +22,23 @@
         ["1", "4", "7"],
         ["2", "5", "8"]];
 
-    var gjoerTrekk = (felt) => {
+    var gjoerTrekk = (felt) => { 
         if (ledig(felt)) {
             // Oppdater modell
+            settSpiller();
             lagreTrekk(felt);
             giPoeng();
             
             // Oppdater webside
             tegnMerke(felt);
             fargVinnerkombo();
-            oppdaterPoeng();
-            
-            // Ny runde klar
-            byttSpiller();
+            oppdaterPoeng();       
         }           
     };
-
-    var ledig = felt => trekk[felt] === ""; 
+    
+    var ledig = felt => trekk[felt] === "";
+    
+    var settSpiller = () => (spiller === "0") ? spiller = "X" : spiller = "0"; 
     
     var lagreTrekk = felt => trekk[felt] = spiller;
     
@@ -56,8 +56,6 @@
             }
         }
     };
-    
-    var byttSpiller = () => (spiller === "0") ? spiller = "X" : spiller = "0";
 
     var tegnMerke = felt => el(felt).innerHTML = trekk[felt]; 
 
