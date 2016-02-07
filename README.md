@@ -44,7 +44,7 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
 ```html
 <!DOCTYPE html>
 <html>
-    <head lang="no">
+    <head>
         <meta charset="utf-8" />
     </head>
 
@@ -76,8 +76,8 @@ Opprett en fil kalt tic-tac-toe.html.
 
 ```html
 <header class="flex-box">
-        <a href="index.html" class="link flex-1">Home</a>
-        <a href="tic-tac-toe.html" class="link flex-1">Tic-tac-toe</a>
+        <a href="index.html">Home</a>
+        <a href="tic-tac-toe.html">Tic-tac-toe</a>
     </header>
     <article>
         <h1>En overskrift</h1>
