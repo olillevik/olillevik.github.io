@@ -5,10 +5,10 @@
     var el = id => document.getElementById(id + "");
 
     // modell
-        var spiller = "0";
-        var poengX = "0";
-        var poeng0 = "0";
-        var trekk = ["", "", "", "", "", "", "", "", ""];
+    var spiller = "0";
+    var poengX = "0";
+    var poeng0 = "0";
+    var trekk = ["", "", "", "", "", "", "", "", ""];
     
     // konstanter
     const brett = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
