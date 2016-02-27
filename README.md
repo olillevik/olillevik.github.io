@@ -22,13 +22,18 @@ Reglene for tripp-trapp-tresko kan leses på wikipedia side [https://no.wikipedi
 2. En teksteditor - [Brackets.io](http://brackets.io)
 3. En Github-konto [http://github.com](http://github.com)
 
+### Nettleser
+Sjekk at du har nettleseren Chrome eller Firefox på pcen. Hvis du ikke har en av disse nettleserne installer [Chrome](https://www.google.com/chrome/browser/desktop/index.html).
+
 ### Bracket
-For å skrive kode i HTML, CSS ellerl JavaScript trenger vi ikke noe spesielt verktøy. Men verktøy kan gjøre det lettere for oss. Vi skal bruke [brackets.io](http://brackets.io). Dette er en enkel editor som har støtte for autocomplete og syntax-highlighting. Vi skal også utvide den med tillegget beautify for å autoformatere koden vår.
+For å skrive kode i HTML, CSS ellerl JavaScript trenger vi ikke noe spesielt verktøy. Men verktøy kan gjøre det lettere for oss. Vi skal bruke [brackets.io](http://brackets.io). Dette er en enkel editor som har støtte for autocomplete og syntax-highlighting. Vi skal også utvide den med tillegget beautify for å autoformatere koden vår. Installer Bracket.
 
 ### Github
 * For å ta vare på koden vi skriver. 
 * For å kunne komme tilbake til "der vi var" hvis vi programmerer feil. 
 * For å få programmet vårt ut på internett.
+
+>Tips! Det er viktig å huske brukernavnet og passordet. Skriv det gjerne ned på en lapp som du tar med deg på kurset hvis du synes det er vanskelig å huske.
 
 Lag en konto på [http://github.com](http://github.com). Installer desktop-klienten til github på pcen din [https://desktop.github.com/](https://desktop.github.com/).
 
@@ -190,7 +195,9 @@ Hva skjer så når Harry ønsker å sette inn 3 gullmynter på kontoen sin. Da s
 //beregnInnskudd er variabelen som holder funksjonen.
 //konto og beløp er inn-variable (input variables).
 //nyttBeløpPaaKonto er ut-variabel (output).
-var beregnInnskudd = (konto, belop) => nyttBelopPaaKonto = konto + belop;
+var beregnInnskudd = function(konto, belop) {
+    nyttBelopPaaKonto = konto + belop;
+};
 
 // Beregner ny verdi på kontoen og tilordner den nye verdien til variabelen konto.
 harrysKonto = beregnInnskudd(harrysKonto, 3);
@@ -199,81 +206,41 @@ harrysKonto = beregnInnskudd(harrysKonto, 3);
 Funksjoner har ingen, en eller flere inputvariable. Dersom du ikke ønsker å ha noen inputvariabel kan du skrive det slik:
 
 ```javascript
-var fly = () => "Ascendio";
-fly();
-```
-
-Noen ganger trenger du mer enn en linje for å skrive funksjonen. Det kan du gjøre gjennom å putte "kroppen" av funksjonen mellom to krøllparenteser.
-
-```javascript
-var fly = () => {
-    console.log("En trollmann eller trollkvinne har kastet en formel for å fly");
+var fly = function() {
     return "Ascendio";
 };
+
 fly();
 ```
 
 ## La reisen fortsette
 
 ### La oss krydre med litt JavaScript
-Vi starter med litt magi. Koden under sørger for at JavaScript-koden lastes inn når den importeres av en web-side. Opprett filen script.js og legg inn koden under.
+Koden under sørger for at JavaScript-koden lastes inn når den importeres av en web-side. Opprett filen script.js og legg inn koden under.
 
 ```javascript
-(() => {
+(function () {
     'use strict';
     //skriv koden din her
-})();
+}) ();
 ```
 
 ### La oss spille...
-Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. Vi trenger en funksjon som tar imot hvilken rute som ble klikket på og oppdaterer innholdet i ruten.
+Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. Vi trenger en funksjon som lytter etter klikk i skjermbildet.
 
 ```javascript
-    window.play = (sq) => {
-        sq.innerHTML = 0;
-    };
+    document.getElementById("0").addEventListener("click", function () {
+        gjoerTrekk(0);
+    });
 ```
 ### Kall funksjonen når du trykker i en rute
-For hver av rutene våre må vi legge til _onclick=..._ og fortelle hva som skal skje.
-```html
-    <td id="1" onclick="play(this)">&nbsp</td>
-```
+For hver av rutene våre må vi legge til en lyttefunksjon. Hva må du skrive da?
+
+>Tips! Du har allerede gjort det for felt 0. Se på hva du gjorde over og forsøk å legge til til en lytter for hvert av de andre feltene - felt 1-8.
 
 Nå er det på tide å bytte spiller. Hvordan gjør vi det?
 
 >Tips! Opprett en variabel som holder styr på hvilket merke som skal settes. Bytt mellom 0 og X avhengig av hvem som spilte sist.
-
-### La oss fullføre rutenettet vårt
-
-```html
-<table>
-    <tr>
-        <td id="1" onclick="play(this)">&nbsp</td>
-        <td id="2" onclick="play(this)" />
-        <td id="3" onclick="play(this)" />
-    </tr>
-    <tr>
-        <td id="4" onclick="play(this)">&nbsp </td>
-        <td id="5" onclick="play(this)" />
-        <td id="6" onclick="play(this)" />
-    </tr>
-    <tr>
-        <td id="7" onclick="play(this)">&nbsp </td>
-        <td id="8" onclick="play(this)" />
-        <td id="9" onclick="play(this)" />
-    </tr>
-</table>
-```
-
-### Farg vinnende kombinasjon grønn
-_TODO_
-
-### Mulige utvidelser
-* Poengoversikt (/)
-* Nullstille spill med en knapp (/)
-* Fortelle hvem som er neste spiller
-* Penere webside
-* Spille mot AI
 
 
     
