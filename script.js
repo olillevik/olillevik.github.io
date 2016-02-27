@@ -40,15 +40,15 @@
 
     var ledig = function (felt) {
         return trekk[felt] === "";
-    }
+    };
 
     var settSpiller = function () {
         return (spiller === "0") ? spiller = "X" : spiller = "0";
-    }
+    };
 
     var lagreTrekk = function (felt) {
         return trekk[felt] = spiller;
-    }
+    };
 
     var finnVinnerkombo = function () {
         return vinnerkombinasjoner.filter(eietAvSpiller);
@@ -77,15 +77,15 @@
     };
 
     var fargVinnerkombo = function () {
-        finnVinnerkombo().map(function (kombo) {
-            fargFelt(kombo);
-        });
+        finnVinnerkombo().map(fargKombo);
     };
 
-    var fargFelt = function (kombo) {
-        kombo.map(function (felt) {
-            el(felt).style.backgroundColor = "green";
-        });
+    var fargKombo = function (kombo) {
+        kombo.map(fargFelt);
+    };
+
+    var fargFelt = function (felt) {
+        el(felt).style.backgroundColor = "green";
     };
 
     var oppdaterPoeng = function () {
@@ -94,23 +94,28 @@
     };
 
     var nyttSpill = function () {
-        brett.map(function (id) {
-            el(id).innerHTML = "&nbsp";
-        });
-
-        brett.map(function (id) {
-            el(id).style.backgroundColor = "lightgray";
-        });
-
+        brett.map(toemFelt);
+        brett.map(nullstillBakgrunnsfarge);
         trekk = ["", "", "", "", "", "", "", "", ""];
     };
 
-    // hendelser
-    brett.map(function (id) {
+    var toemFelt = function (id) {
+        el(id).innerHTML = "&nbsp";
+    };
+
+    var nullstillBakgrunnsfarge = function (id) {
+        el(id).style.backgroundColor = "lightgray";
+        return el(id);
+    };
+
+    // hendelser   
+    var leggTilLytterForFelt = function (id) {
         el(id).addEventListener("click", function () {
             gjoerTrekk(id);
         });
-    });
+    };
+
+    brett.map(leggTilLytterForFelt);
 
     el("nyttSpill").addEventListener("click", function () {
         nyttSpill();
