@@ -32,7 +32,6 @@
         el(felt).innerHTML = trekk[felt];
     };
 
-
     // hendelser
     el(0).addEventListener("click", function () {
         gjoerTrekk(0);
