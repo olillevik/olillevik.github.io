@@ -1,18 +1,12 @@
 (function () {
     'use strict';
 
-    // hjelpemetode
-    var el = function (id) {
-        return document.getElementById(id + "");
-    };
-
     // modell
     var spiller = "";
     var poengX = "0";
     var poeng0 = "0";
     var trekk = ["", "", "", "", "", "", "", "", ""];
 
-    // konstanter
     const brett = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
     const vinnerkombinasjoner = [
         ["0", "1", "2"],
@@ -24,18 +18,26 @@
         ["1", "4", "7"],
         ["2", "5", "8"]];
 
-    var gjoerTrekk = function (felt) {
-        if (ledig(felt)) {
-            // Oppdater modell
-            settSpiller();
-            lagreTrekk(felt);
-            giPoeng();
-
-            // Oppdater webside
-            tegnMerke(felt);
-            fargVinnerkombo();
-            oppdaterPoeng();
+    var oppdaterModell = function (knappTrykket) {
+        console.log("Knapp trykket med id: " + knappTrykket);
+        if ("nyttSpill" === knappTrykket) {
+            brett.map(toemFelt);
+            brett.map(nullstillBakgrunnsfarge);
+            trekk = ["", "", "", "", "", "", "", "", ""];
+        } else {
+            if (ledig(knappTrykket)) {
+                console.log("Gjør trekk");
+                settSpiller();
+                lagreTrekk(knappTrykket);
+                giPoeng();
+            };
         }
+    };
+
+    var vis = function () {
+        tegnMerkerPaaBrettet();
+        fargVinnerkombo();
+        oppdaterPoeng();
     };
 
     var ledig = function (felt) {
@@ -72,8 +74,20 @@
         }
     };
 
+    var el = function (id) {
+        return document.getElementById(id + "");
+    };
+
+    var tegnMerkerPaaBrettet = function () {
+        console.log("Tegner merker");
+        brett.map(tegnMerke);
+    };
+
     var tegnMerke = function (felt) {
-        el(felt).innerHTML = trekk[felt];
+        if (trekk[felt] !== "") {
+            console.log("Tegner merke for felt: " + felt);
+            el(felt).innerHTML = trekk[felt];
+        }
     };
 
     var fargVinnerkombo = function () {
@@ -93,12 +107,6 @@
         el("spiller0").innerHTML = (poeng0);
     };
 
-    var nyttSpill = function () {
-        brett.map(toemFelt);
-        brett.map(nullstillBakgrunnsfarge);
-        trekk = ["", "", "", "", "", "", "", "", ""];
-    };
-
     var toemFelt = function (id) {
         el(id).innerHTML = "&nbsp";
     };
@@ -108,17 +116,19 @@
         return el(id);
     };
 
-    // hendelser   
+    // hendelser
     var leggTilLytterForFelt = function (id) {
         el(id).addEventListener("click", function () {
-            gjoerTrekk(id);
+            oppdaterModell(id);
+            vis();
         });
     };
 
     brett.map(leggTilLytterForFelt);
 
     el("nyttSpill").addEventListener("click", function () {
-        nyttSpill();
+        oppdaterModell("nyttSpill");
+        vis();
     });
 
 })();

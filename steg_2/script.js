@@ -8,16 +8,18 @@
 
     // modell
     var spiller = "";
-    var poengX = "0";
     var trekk = ["", "", "", "", "", "", "", "", ""];
+    
+    const brett = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
 
-    var gjoerTrekk = function (felt) {
-        // Oppdater modell
+    var oppdaterModell = function (knappTrykket) {
+        console.log("Knapp trykket med id: " + knappTrykket);
         settSpiller();
-        lagreTrekk(felt);
+        lagreTrekk(knappTrykket);
+    };
 
-        // Oppdater webside
-        tegnMerke(felt);
+    var vis = function () {
+        tegnMerkerPaaBrettet();
     };
 
     var settSpiller = function () {
@@ -28,37 +30,54 @@
         return trekk[felt] = spiller;
     }
 
+    var tegnMerkerPaaBrettet = function () {
+        console.log("Tegner merker");
+        brett.map(tegnMerke);
+    };
+
     var tegnMerke = function (felt) {
-        el(felt).innerHTML = trekk[felt];
+        if (trekk[felt] !== "") {
+            console.log("Tegner merke for felt: " + felt);
+            el(felt).innerHTML = trekk[felt];
+        }
     };
 
     // hendelser
     el(0).addEventListener("click", function () {
-        gjoerTrekk(0);
+        oppdaterModell(0);
+        vis();
     });
     el(1).addEventListener("click", function () {
-        gjoerTrekk(1);
+        oppdaterModell(1);
+        vis();
     });
     el(2).addEventListener("click", function () {
-        gjoerTrekk(2);
+        oppdaterModell(2);
+        vis();
     });
     el(3).addEventListener("click", function () {
-        gjoerTrekk(3);
+        oppdaterModell(3);
+        vis();
     });
     el(4).addEventListener("click", function () {
-        gjoerTrekk(4);
+        oppdaterModell(4);
+        vis();
     });
     el(5).addEventListener("click", function () {
-        gjoerTrekk(5);
+        oppdaterModell(5);
+        vis();
     });
     el(6).addEventListener("click", function () {
-        gjoerTrekk(6);
+        oppdaterModell(6);
+        vis();
     });
     el(7).addEventListener("click", function () {
-        gjoerTrekk(7);
+        oppdaterModell(7);
+        vis();
     });
     el(8).addEventListener("click", function () {
-        gjoerTrekk(8);
+        oppdaterModell(8);
+        vis();
     });
 
 })();

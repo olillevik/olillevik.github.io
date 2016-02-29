@@ -230,7 +230,7 @@ Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. V
 
 ```javascript
     document.getElementById("0").addEventListener("click", function () {
-        gjoerTrekk(0);
+        oppdaterModell(0);
     });
 ```
 ### Kall funksjonen når du trykker i en rute
