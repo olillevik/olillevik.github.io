@@ -41,7 +41,7 @@ Lag en konto på [http://github.com](http://github.com). Installer desktop-klien
 Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
 
 ### Opprett prosjektet på github
-_TODO_
+Det første du gjør er å opprette prosjektet på github. Navnet på prosjektet er viktig. Det må være _[ditt github brukernavn].github.io. Du kan opprette prosjektet fra Github sin desktopklient.
 
 ### Lag en webside
 Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vil.
@@ -50,7 +50,6 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
     </head>
 
     <body>
@@ -63,8 +62,7 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
 ```html
 <!DOCTYPE html>
 <html>
-    <head lang="no">
-        <meta charset="utf-8" />
+    <head>
         <title>Min tittel</title>
     </head>
 
@@ -80,14 +78,24 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
 Opprett en fil kalt tic-tac-toe.html.
 
 ```html
-<header class="flex-box">
-        <a href="index.html">Home</a>
-        <a href="tic-tac-toe.html">Tic-tac-toe</a>
-    </header>
-    <article>
-        <h1>En overskrift</h1>
-        <p>Her kan jeg skrive et avsnitt om hva jeg måtte ønske.</p>
-    </article>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Min tittel</title>
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html">Home</a>
+            <a href="tic-tac-toe.html">Tic-tac-toe</a>
+        </header>
+        <article>
+            <h1>En overskrift</h1>
+            <p>Her kan jeg skrive et avsnitt om hva jeg måtte ønske.</p>
+        </article>
+    </body>
+</html>
+
 ```
 Men det ser jo ikke så pent ut. Vi endrer utseendet ved å legge å opprette filen _styles.css_ og legge til følgende:
 ```css
