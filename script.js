@@ -5,7 +5,7 @@
     var spiller = "";
     var poengX = "0";
     var poeng0 = "0";
-    var trekk = ["", "", "", "", "", "", "", "", ""];
+    var trekk = new Array(9);
 
     const brett = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
     const vinnerkombinasjoner = [
@@ -18,12 +18,11 @@
         ["1", "4", "7"],
         ["2", "5", "8"]];
 
-    var oppdaterModell = function (knappTrykket) {
+    var oppdater = function (knappTrykket) {
         console.log("Knapp trykket med id: " + knappTrykket);
         if ("nyttSpill" === knappTrykket) {
-            brett.map(toemFelt);
-            brett.map(nullstillBakgrunnsfarge);
-            trekk = ["", "", "", "", "", "", "", "", ""];
+            trekk = new Array(9);
+
         } else {
             if (ledig(knappTrykket)) {
                 console.log("Gjør trekk");
@@ -32,6 +31,7 @@
                 giPoeng();
             };
         }
+        vis();
     };
 
     var vis = function () {
@@ -41,7 +41,7 @@
     };
 
     var ledig = function (felt) {
-        return trekk[felt] === "";
+        return typeof (trekk[felt]) === "undefined";
     };
 
     var settSpiller = function () {
@@ -53,10 +53,10 @@
     };
 
     var finnVinnerkombo = function () {
-        return vinnerkombinasjoner.filter(eietAvSpiller);
+        return vinnerkombinasjoner.filter(komboEietAvSpiller);
     };
 
-    var eietAvSpiller = function (kombo) {
+    var komboEietAvSpiller = function (kombo) {
         return kombo.filter(feltEietAvSpiller).length === 3;
     };
 
@@ -80,22 +80,24 @@
 
     var tegnMerkerPaaBrettet = function () {
         console.log("Tegner merker");
-        brett.map(tegnMerke);
+        brett.forEach(tegnMerke);
     };
 
     var tegnMerke = function (felt) {
-        if (trekk[felt] !== "") {
+        if (typeof (trekk[felt]) !== "undefined") {
             console.log("Tegner merke for felt: " + felt);
             el(felt).innerHTML = trekk[felt];
+        } else {
+            settTomtFelt(felt);
         }
     };
 
     var fargVinnerkombo = function () {
-        finnVinnerkombo().map(fargKombo);
+        finnVinnerkombo().forEach(fargKombo);
     };
 
     var fargKombo = function (kombo) {
-        kombo.map(fargFelt);
+        kombo.forEach(fargFelt);
     };
 
     var fargFelt = function (felt) {
@@ -107,28 +109,22 @@
         el("spiller0").innerHTML = (poeng0);
     };
 
-    var toemFelt = function (id) {
+    var settTomtFelt = function (id) {
         el(id).innerHTML = "&nbsp";
-    };
-
-    var nullstillBakgrunnsfarge = function (id) {
         el(id).style.backgroundColor = "lightgray";
-        return el(id);
     };
 
     // hendelser
     var leggTilLytterForFelt = function (id) {
         el(id).addEventListener("click", function () {
-            oppdaterModell(id);
-            vis();
+            oppdater(id);
         });
     };
 
-    brett.map(leggTilLytterForFelt);
+    brett.forEach(leggTilLytterForFelt);
 
     el("nyttSpill").addEventListener("click", function () {
-        oppdaterModell("nyttSpill");
-        vis();
+        oppdater("nyttSpill");
     });
 
 })();
