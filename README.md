@@ -215,7 +215,7 @@ Hva skjer så når Harry ønsker å sette inn 3 gullmynter på kontoen sin. Da s
 //konto og beløp er inn-variable (input variables).
 //nyttBeløpPaaKonto er ut-variabel (output).
 var beregnInnskudd = function(konto, belop) {
-    nyttBelopPaaKonto = konto + belop;
+    return nyttBelopPaaKonto = konto + belop;
 };
 
 // Beregner ny verdi på kontoen og tilordner den nye verdien til variabelen konto.
