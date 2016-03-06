@@ -197,6 +197,7 @@ I eksempelet over kan kontoen til Harry beskrives med en variabel. La oss gi den
 Gjennom eksemplene kan vi bruke siden http://repl.it og velge språket JavaScript for å demonstrere.
 
 ```javascript
+// Denne linjen er ikke en del av koden fordi den står bak to skråstreker. Alt etter skråstrekene på den linjen er ikke kode.
 // En variabel i JavaScript
 var harrysKonto;
 ```
