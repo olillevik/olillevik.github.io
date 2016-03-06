@@ -251,6 +251,11 @@ Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. V
     document.getElementById("0").addEventListener("click", function () {
         oppdater(0);
     });
+    
+    var oppdater = function(elementId) {
+        // Oppdater modellen
+        // Vis modellen
+    }
 ```
 
 ### Kall funksjonen når du trykker i en rute
@@ -262,21 +267,21 @@ Opprett så funksjonen for å oppdatere. Begynn med å sette spiller, lagre trek
 
 ```javascript
 var oppdater = function (knappTrykket) {
-        settSpiller();
-        lagreTrekk(knappTrykket);
+        //settSpiller();
+        //lagreTrekk(knappTrykket);
         vis();
     };
 
     var vis = function () {
-        tegnMerkerPaaBrettet();
+        //tegnMerkerPaaBrettet();
     };
 ```
 
-Nå er det på tide å lage innholdet i funksjonen for bytte spiller. Hvordan gjør vi det?
+Nå er det på tide å lage innholdet i funksjonen for sette riktig spiller. Hvordan gjør vi det?
 
 >Tips 1: Opprett en variabel som holder styr på hvilket merke som skal settes. Bytt mellom 0 og X avhengig av hvem som spilte sist.
 
->Tips 2: Bytt spiller ved starten på hver runde.
+>Tips 2: Sett riktig spiller ved starten på hver runde.
 
 Herfra og ut må du bruke kildekoden til å hjelpe deg når du trenger implementasjonstips. Du har ikke lagret trekket og oppdatert visningen. Lykke til med det.
     
