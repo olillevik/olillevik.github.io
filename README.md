@@ -194,6 +194,8 @@ Gjennom hele eksempelet kan du prøve koden i din egen nettleser. Åpne Chrome. 
 ### Variabel
 I eksempelet over kan kontoen til Harry beskrives med en variabel. La oss gi den et navn, _harrysKonto_. En variabel kan holde på en verdi eller en funksjon.
 
+Gjennom eksemplene kan vi bruke siden http://repl.it og velge språket JavaScript for å demonstrere.
+
 ```javascript
 // En variabel i JavaScript
 var harrysKonto;
