@@ -33,7 +33,7 @@
 
     var tegnMerkerPaaBrettet = function () {
         console.log("Tegner merker");
-        brett.map(tegnMerke);
+        brett.forEach(tegnMerke);
     };
 
     var tegnMerke = function (felt) {
