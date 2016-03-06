@@ -37,7 +37,7 @@ For å skrive kode i HTML, CSS ellerl JavaScript trenger vi ikke noe spesielt ve
 
 Lag en konto på [http://github.com](http://github.com). Installer desktop-klienten til github på pcen din [https://desktop.github.com/](https://desktop.github.com/).
 
-## La reisen begynne...
+## La reisen begynne... steg 1 hjemmeside
 Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
 
 ### Opprett prosjektet på github
@@ -63,41 +63,46 @@ Vi trenger en webside. Lag en fil kalt index.html i en mappe du kaller hva du vi
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8" />
         <title>Min tittel</title>
     </head>
 
     <body>
         <h1>En overskrift</h1>
-        <p>Her kan jeg skrive et avsnitt om hva jeg måtte ønske.</p>
+        <p>Her kan jeg skrive et avsnitt om det jeg har lyst til. Dette blir synlig for hele verden!</p>
     </body>
 </html>
 ```
 
-### En ny side for bondesjakk
+Nå er det på tide å lagre, åpne githubklienten og gjøre _commit_, _publish_ og _sync_.
 
-Opprett en fil kalt tic-tac-toe.html.
+### En ny side for bondesjakk - steg 2 tripp-trapp-tresko
+
+Opprett en fil kalt tripp-trapp-tresko.html.
 
 ```html
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Min tittel</title>
+        <meta charset="utf-8" />
+        <title>Tripp-trapp-tresko</title>
     </head>
 
     <body>
         <header>
-            <a href="index.html">Home</a>
-            <a href="tic-tac-toe.html">Tic-tac-toe</a>
+            <meta charset="utf-8" />
+            <a href="index.html">Hjem</a>
+            <a href="tic-tac-toe.html">Tripp-trapp-tresko</a>
         </header>
         <article>
-            <h1>En overskrift</h1>
-            <p>Her kan jeg skrive et avsnitt om hva jeg måtte ønske.</p>
+            
         </article>
     </body>
 </html>
 
 ```
 Men det ser jo ikke så pent ut. Vi endrer utseendet ved å legge å opprette filen _styles.css_ og legge til følgende:
+
 ```css
 .flex-box {
     display: flex;
@@ -122,15 +127,19 @@ header a {
 Importer css-filen i index.html.
 
 ```html
-<link rel="stylesheet" href="styles.css">
+<header>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css">
+</header>
 ```
 
 Legg klassene til header og linkelement.
 
 ```html
 <header class="flex-box">
-        <a href="index.html" class="link flex-1">Home</a>
-        <a href="tic-tac-toe.html" class="link flex-1">Tic-tac-toe</a>
+    <meta charset="utf-8" />
+    <a href="index.html" class="link flex-1">Hjem</a>
+    <a href="tripp-trapp-tresko.html" class="link flex-1">Tripp-trapp-tresko</a>
 </header>
 ```
 
@@ -168,6 +177,8 @@ td {
     text-align: center;
 }
 ```
+
+Nå kan du utvide rutenettet. Du trenger 9 ruter.
 
 ## Programmering i JavaScript
 For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
@@ -234,22 +245,41 @@ Koden under sørger for at JavaScript-koden lastes inn når den importeres av en
 ```
 
 ### La oss spille...
-Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. Vi trenger en funksjon som lytter etter klikk i skjermbildet.
+Når vi trykker på en av rutene ønsker vi at det skal dukke opp et tegn der. Vi trenger en funksjon som lytter etter klikk i skjermbildet. Hver gang noen klikker må man oppdatere spillet.
 
 ```javascript
     document.getElementById("0").addEventListener("click", function () {
-        oppdaterModell(0);
+        oppdater(0);
     });
 ```
+
 ### Kall funksjonen når du trykker i en rute
 For hver av rutene våre må vi legge til en lyttefunksjon. Hva må du skrive da?
 
 >Tips! Du har allerede gjort det for felt 0. Se på hva du gjorde over og forsøk å legge til til en lytter for hvert av de andre feltene - felt 1-8.
 
-Nå er det på tide å bytte spiller. Hvordan gjør vi det?
+Opprett så funksjonen for å oppdatere. Begynn med å sette spiller, lagre trekket som gjøres og så oppdaterer du visningen.
 
->Tips! Opprett en variabel som holder styr på hvilket merke som skal settes. Bytt mellom 0 og X avhengig av hvem som spilte sist.
+```javascript
+var oppdater = function (knappTrykket) {
+        settSpiller();
+        lagreTrekk(knappTrykket);
+        vis();
+    };
 
+    var vis = function () {
+        tegnMerkerPaaBrettet();
+    };
+```
 
+Nå er det på tide å lage innholdet i funksjonen for bytte spiller. Hvordan gjør vi det?
+
+>Tips 1: Opprett en variabel som holder styr på hvilket merke som skal settes. Bytt mellom 0 og X avhengig av hvem som spilte sist.
+
+>Tips 2: Bytt spiller ved starten på hver runde.
+
+Herfra og ut må du bruke kildekoden til å hjelpe deg når du trenger implementasjonstips. Du har ikke lagret trekket og oppdatert visningen. Lykke til med det.
     
+## Gi poeng når en spiller vinner - steg 3 poeng
 
+Dette steget er ikke beskrevet. Herfra er du uten annen støtte enn det du finner i koden. Lykke til!
