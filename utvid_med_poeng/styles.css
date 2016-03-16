@@ -4,10 +4,6 @@
         justify-content: space-around;
     }
     
-    .flex-left {
-        justify-content: flex-start;
-    }
-    
     .flex-1 {
         flex: 1;
         min-width: 65vh;
@@ -39,16 +35,16 @@
         text-align: center;
         background-color: lightgrey;
     }
-
-    .em3{
+    
+    .em3 {
         font-size: 3em;
     }
     
-    .poengmerkelapp {   
+    .poengmerkelapp {
         min-width: 80px;
         float: left;
     }
-
+    
     button {
         width: 180px;
         height: 80px;
