@@ -7,7 +7,6 @@
     var poeng0 = "0";
     var trekk = new Array(9);
 
-    const brett = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
     const vinnerkombinasjoner = [
         ["0", "1", "2"],
         ["3", "4", "5"],
@@ -45,7 +44,11 @@
     };
 
     var settSpiller = function () {
-        return (spiller === "0") ? spiller = "X" : spiller = "0";
+        if (spiller === "0") {
+            spiller = "X"
+        } else {
+            spiller = "0";
+        }
     };
 
     var lagreTrekk = function (felt) {
@@ -80,15 +83,13 @@
 
     var tegnMerkerPaaBrettet = function () {
         console.log("Tegner merker");
-        brett.forEach(tegnMerke);
-    };
-
-    var tegnMerke = function (felt) {
-        if (typeof (trekk[felt]) !== "undefined") {
-            console.log("Tegner merke for felt: " + felt);
-            el(felt).innerHTML = trekk[felt];
-        } else {
-            settTomtFelt(felt);
+        for (let feltId = 0; feltId <= 8; feltId++) {
+            if (typeof (trekk[feltId]) !== "undefined") {
+                console.log("Tegner merke for felt: " + feltId);
+                el(feltId).innerHTML = trekk[feltId];
+            } else {
+                settTomtFelt(feltId);
+            }
         }
     };
 
@@ -115,13 +116,11 @@
     };
 
     // hendelser
-    var leggTilLytterForFelt = function (id) {
-        el(id).addEventListener("click", function () {
-            oppdater(id);
+    for (let feltId = 0; feltId <= 8; feltId++) {
+        el(feltId).addEventListener("click", function () {
+            oppdater(feltId);
         });
     };
-
-    brett.forEach(leggTilLytterForFelt);
 
     el("nyttSpill").addEventListener("click", function () {
         oppdater("nyttSpill");
