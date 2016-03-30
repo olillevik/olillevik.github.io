@@ -1,15 +1,17 @@
 (function () {
     'use strict';
 
+    var spiller = "";
+
     var el = function (id) {
         return document.getElementById(id + "");
     };
 
-    var spiller = "";
-
-    var oppdater = function (felt) {
-        settSpiller();
-        tegnMerke(felt)
+    var oppdater = function (feltId) {
+        if (el(feltId).innerHTML !== "X" && el(feltId).innerHTML !== "0") {
+            settSpiller();
+            tegnMerke(feltId)
+        }
     };
 
     var settSpiller = function () {
