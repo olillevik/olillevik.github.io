@@ -1,20 +1,26 @@
 (function () {
     'use strict';
 
+    var spiller = "";
+
     var el = function (id) {
         return document.getElementById(id + "");
     };
 
-    var spiller = "";
-
-    var oppdater = function (felt) {
-        settSpiller();
-        tegnMerke(felt)
+    var oppdater = function (feltId) {
+        if (el(feltId).innerHTML !== "X" && el(feltId).innerHTML !== "0") {
+            settSpiller();
+            tegnMerke(feltId)
+        }
     };
 
     var settSpiller = function () {
-        spiller = (spiller === "0") ? spiller = "X" : spiller = "0";
-    }
+        if (spiller === "0") {
+            spiller = "X"
+        } else {
+            spiller = "0";
+        }
+    };
 
     var tegnMerke = function (felt) {
         el(felt).innerHTML = spiller;

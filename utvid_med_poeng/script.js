@@ -23,7 +23,7 @@
             trekk = new Array(9);
 
         } else {
-            if (ledig(knappTrykket)) {
+            if (trekk[knappTrykket] !== "X" && trekk[knappTrykket] !== "0") {
                 console.log("Gjør trekk");
                 settSpiller();
                 lagreTrekk(knappTrykket);
@@ -39,11 +39,8 @@
         oppdaterPoeng();
     };
 
-    var ledig = function (felt) {
-        return typeof (trekk[felt]) === "undefined";
-    };
-
     var settSpiller = function () {
+        console.log("Setter spiller");
         if (spiller === "0") {
             spiller = "X"
         } else {
@@ -63,8 +60,8 @@
         return kombo.filter(feltEietAvSpiller).length === 3;
     };
 
-    var feltEietAvSpiller = function (felt) {
-        return trekk[felt] === spiller;
+    var feltEietAvSpiller = function (feltId) {
+        return trekk[feltId] === spiller;
     };
 
     var giPoeng = function () {
@@ -84,7 +81,7 @@
     var tegnMerkerPaaBrettet = function () {
         console.log("Tegner merker");
         for (let feltId = 0; feltId <= 8; feltId++) {
-            if (typeof (trekk[feltId]) !== "undefined") {
+            if (trekk[feltId] === "X" || trekk[feltId] === "0") {
                 console.log("Tegner merke for felt: " + feltId);
                 el(feltId).innerHTML = trekk[feltId];
             } else {
@@ -115,7 +112,7 @@
         el(id).style.backgroundColor = "lightgray";
     };
 
-    // hendelser
+    // opprett lyttere for hendelser
     for (let feltId = 0; feltId <= 8; feltId++) {
         el(feltId).addEventListener("click", function () {
             oppdater(feltId);
