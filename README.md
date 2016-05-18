@@ -25,8 +25,7 @@ Installer [Chrome](https://www.google.com/chrome/browser/desktop/index.html) hvi
 ## La reisen begynne...
 Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett men det skal vi ikke bruke med mindre vi setter oss ordentlig fast og ikke kommer ut av det med egen hjelp, sidemannens hjelp eller instruktørens hjelp.
 
-### Opprett prosjektet på github
-Det er opprettet et startpunkt i jsbin. Gå til startpunktet [http://jsbin.com/matip/14/].
+Det er opprettet et startpunkt i JSBin. Gå til [startpunktet i JSBin|http://jsbin.com/matip/14/]. Trykk deretter på knappen "Edit in JSBin" for å kunne editere koden.
 
 ## Programmering i JavaScript
 For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
