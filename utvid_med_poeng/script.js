@@ -2,12 +2,12 @@
     'use strict';
 
     // modell
-    var spiller = "";
+    var spillersTur = "0";
     var poengX = "0";
     var poeng0 = "0";
     var trekk = new Array(9);
 
-    const vinnerkombinasjoner = [
+    var vinnerkombinasjoner = [
         ["0", "1", "2"],
         ["3", "4", "5"],
         ["6", "7", "8"],
@@ -17,7 +17,8 @@
         ["1", "4", "7"],
         ["2", "5", "8"]];
 
-    var oppdater = function (knappTrykket) {
+    var oppdater = function () {
+        var knappTrykket = this.id;
         console.log("Knapp trykket med id: " + knappTrykket);
         if ("nyttSpill" === knappTrykket) {
             trekk = new Array(9);
@@ -25,10 +26,10 @@
         } else {
             if (trekk[knappTrykket] !== "X" && trekk[knappTrykket] !== "0") {
                 console.log("Gjør trekk");
-                settSpiller();
+                nesteSpiller();
                 lagreTrekk(knappTrykket);
                 giPoeng();
-            };
+            }
         }
         vis();
     };
@@ -39,17 +40,17 @@
         oppdaterPoeng();
     };
 
-    var settSpiller = function () {
+    var nesteSpiller = function () {
         console.log("Setter spiller");
-        if (spiller === "0") {
-            spiller = "X"
+        if (spillersTur === "0") {
+            spillersTur = "X";
         } else {
-            spiller = "0";
+            spillersTur = "0";
         }
     };
 
     var lagreTrekk = function (felt) {
-        return trekk[felt] = spiller;
+        trekk[felt] = spillersTur;
     };
 
     var finnVinnerkombo = function () {
@@ -61,14 +62,14 @@
     };
 
     var feltEietAvSpiller = function (feltId) {
-        return trekk[feltId] === spiller;
+        return trekk[feltId] === spillersTur;
     };
 
     var giPoeng = function () {
         if (finnVinnerkombo().length > 0) {
-            if (spiller === "X") {
+            if (spillersTur === "X") {
                 ++poengX;
-            } else if (spiller === "0") {
+            } else if (spillersTur === "0") {
                 ++poeng0;
             }
         }
@@ -80,7 +81,7 @@
 
     var tegnMerkerPaaBrettet = function () {
         console.log("Tegner merker");
-        for (let feltId = 0; feltId <= 8; feltId++) {
+        for (var feltId = 0; feltId <= 8; feltId++) {
             if (trekk[feltId] === "X" || trekk[feltId] === "0") {
                 console.log("Tegner merke for felt: " + feltId);
                 el(feltId).innerHTML = trekk[feltId];
@@ -113,14 +114,10 @@
     };
 
     // opprett lyttere for hendelser
-    for (let feltId = 0; feltId <= 8; feltId++) {
-        el(feltId).addEventListener("click", function () {
-            oppdater(feltId);
-        });
-    };
+    for (var feltId = 0; feltId <= 8; feltId++) {
+        el(feltId).addEventListener("click", oppdater);
+    }
 
-    el("nyttSpill").addEventListener("click", function () {
-        oppdater("nyttSpill");
-    });
+    el("nyttSpill").addEventListener("click", oppdater);
 
 })();
