@@ -27,7 +27,7 @@ Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett 
 
 Det er opprettet et [startpunkt her](https://github.com/olillevik/olillevik.github.io/tree/master/startpunkt). 
 
->Tips til instrukturen: Gjør klar startpunktet i [JSBin](http://jsbin.com). La barna kopiere lenken slik at alle starter likt. Demonstrer deretter gjennom det verktøyet. Startpunkt kan klones herfra: http://jsbin.com/matip/19/
+>Tips til instrukturen: Gjør klar startpunktet i [JSBin](http://jsbin.com). La barna kopiere lenken slik at alle starter likt. Demonstrer deretter gjennom det verktøyet. Startpunkt kan klones herfra: http://jsbin.com/matip/18/
 
 ## Programmering i JavaScript
 For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
@@ -43,7 +43,7 @@ Gjennom hele eksempelet kan du prøve koden i din egen nettleser. Åpne Chrome. 
 ### Variabel
 I eksempelet over kan kontoen til Harry beskrives med en variabel. La oss gi den et navn, _harrysKonto_. En variabel kan holde på en verdi eller en funksjon.
 
-Gjennom eksemplene kan vi bruke siden http://repl.it og velge språket JavaScript for å demonstrere.
+Gjennom eksemplene kan vi bruke http://jsbin.com. Huk av for console og trykk på HTML-, CSS- og Output-fanen for å skjule dem.
 
 ```javascript
 // Denne linjen er ikke en del av koden fordi den står bak to skråstreker. Alt etter skråstrekene på den linjen er ikke kode.
@@ -96,4 +96,4 @@ Herfra og ut må du bruke kildekoden til å hjelpe deg når du trenger implement
     
 ## Gi poeng når en spiller vinner
 
-Dette steget er ikke beskrevet. Herfra er du uten annen støtte enn det du finner i koden. Lykke til!
+Du finner et startpunkt her: http://jsbin.com/matip/19  /. Herfra er du uten annen støtte enn det du finner i koden. Lykke til!
