@@ -27,7 +27,7 @@ Vi skal nå programmere bondesjakk. Et løsningsforslag finner du på internett 
 
 Det er opprettet et [startpunkt her](https://github.com/olillevik/olillevik.github.io/tree/master/startpunkt). 
 
->Tips til instrukturen: Gjør klar startpunktet i [JSBin](http://jsbin.com). La barna kopiere lenken slik at alle starter likt. Demonstrer deretter gjennom det verktøyet.
+>Tips til instrukturen: Gjør klar startpunktet i [JSBin](http://jsbin.com). La barna kopiere lenken slik at alle starter likt. Demonstrer deretter gjennom det verktøyet. Startpunkt kan klones herfra: http://jsbin.com/matip/19/
 
 ## Programmering i JavaScript
 For å lage tripp-trapp-tresko trenger vi å forstå følgende ord i programmeringssammenheng:
